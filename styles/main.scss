@@ -1,0 +1,24 @@
+@import "./base/tailwind.scss", "./fonts/fonts.scss", "./base/utilities.scss",
+  "./base/animations.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply m-0 p-0;
+}
+
+html {
+  font-size: 62.5%;
+
+  font-family: "Mona Sans", sans-serif;
+}
+
+body {
+  @apply relative  overflow-x-hidden  bg-white  text-black;
+}
+
+img {
+  @apply block max-w-full;
+}
