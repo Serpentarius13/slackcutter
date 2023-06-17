@@ -11,7 +11,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      borderRadius: {},
+      borderRadius: {
+        big: "8.2rem",
+      },
 
       colors: {
         "light-gray": "#B4BCD0",
@@ -19,6 +21,11 @@ module.exports = {
         yellow: "#FFDA00",
         "darkest-blue": "#0A0F17",
       },
+
+      fontFamily: {
+        bebas: ["Bebas Neue", "sans-serif"],
+      },
+      backgroundImage: {},
     },
 
     screens: {

@@ -1,20 +1,52 @@
 <template>
-  <button :class="buttonVariants({ variant, size })">
+  <button
+    :class="[
+      props.size,
+      props.theme,
+      fontSizes[size],
+      'btn transition-standard ',
+    ]"
+  >
     <slot />
   </button>
 </template>
 
 <script setup lang="ts">
-import { VariantProps } from "class-variance-authority";
+import { ButtonSizes, ButtonThemes } from "./buttonThemes";
 
-import { buttonVariants } from "./buttonVariants";
+type ButtonProps = {
+  size: ButtonSizes;
+  theme: ButtonThemes;
+};
 
-type ButtonProps = Required<VariantProps<typeof buttonVariants>>;
+const props = withDefaults(defineProps<ButtonProps>(), {
+  size: ButtonSizes.medium,
+  theme: ButtonThemes.purple,
+});
 
-const props = defineProps<{
-  variant: ButtonProps["variant"];
-  size: ButtonProps["size"];
-}>();
+const fontSizes: Record<ButtonSizes, string> = {
+  medium: "text-medium",
+};
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.btn {
+  @apply w-fit flex items-center justify-center border-2 border-solid border-transparent outline-none;
+
+  // themes
+
+  &.purple {
+    @apply bg-purple text-white hover:bg-transparent hover:border-white hover:border-opacity-40;
+  }
+
+  &.outline {
+    @apply bg-transparent text-white hover:bg-purple border-white border-opacity-40 hover:border-transparent;
+  }
+
+  // sizes
+
+  &.medium {
+    @apply rounded-big px-[6.05rem] py-[1.6rem];
+  }
+}
+</style>

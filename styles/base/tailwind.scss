@@ -14,6 +14,10 @@
   .text-big {
     @apply text-[1.8rem] tracking-[0.48px] leading-[160%];
   }
+
+  .heading-big {
+    @apply text-[5rem] leading-[120%] font-bebas uppercase text-white;
+  }
 }
 
 @layer base {
