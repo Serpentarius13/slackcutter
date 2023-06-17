@@ -3,7 +3,7 @@ const plugin = require("tailwindcss/plugin");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./components/**/*.{js,vue,ts}",
+    "./src/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
@@ -17,6 +17,7 @@ module.exports = {
         "light-gray": "#B4BCD0",
         purple: "#7132EF",
         yellow: "#FFDA00",
+        "darkest-blue": "#0A0F17",
       },
     },
 

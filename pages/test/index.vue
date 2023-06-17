@@ -1,15 +1,8 @@
 <template>
-  <div class="h-screen w-screen">
-    <CommonSwiperCourses :courses="courses" />
-  </div>
+  <WidgetsHomeHeader />
 </template>
 
 <script setup lang="ts">
-import { tariffs } from "~/features/constants/tariffs.constants";
-import toaster from "vue-toastification";
-
-import { courses } from "~/features/constants/courses.constants";
-
 const router = useRouter();
 
 onMounted(() => {

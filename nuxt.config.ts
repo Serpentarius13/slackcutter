@@ -31,4 +31,6 @@ export default defineNuxtConfig({
   experimental: {
     typedPages: true,
   },
+
+  components: [{ path: "~/src" }],
 });

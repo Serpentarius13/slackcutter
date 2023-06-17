@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  @apply relative  overflow-x-hidden  bg-white  text-black;
+  @apply relative overflow-x-hidden min-w-max min-h-max bg-darkest-blue;
 }
 
 img {

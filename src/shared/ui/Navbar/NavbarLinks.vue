@@ -1,31 +1,21 @@
 <template>
-  <ul class="flex gap-[4rem] text-[1.7rem] text-black lowercase">
-    <li v-for="{ slug, text } in navLinks" :key="text">
-      <NuxtLink
-        :to="slug"
-        :class="[
-          $route.path.includes(slug) && 'opacity-100',
-          'opacity-80  hover:opacity-[100]',
-        ]"
-      >
-        {{ text }}
-      </NuxtLink>
-    </li>
-  </ul>
+  <nav class="flex items-center gap-[6rem]">
+    <SharedUiNavbarLink
+      v-for="link in navLinks"
+      :link="link"
+      :key="link.text"
+    />
+  </nav>
 </template>
 
 <script setup lang="ts">
-interface INavLink {
-  readonly slug: string;
-  readonly text: string;
-}
+import { TNavLink } from "../../features/types/shared.types";
 
-const navLinks: INavLink[] = [
-  { slug: "/courses", text: "образовательные курсы" },
-  { slug: "/subscription", text: "тарифы и планы" },
-  { slug: "/catalog", text: "каталог" },
-  { slug: "/mentor", text: "Менторство" },
-  { slug: "/payment", text: "Оплата" },
+const navLinks: TNavLink[] = [
+  { text: "Why Slackcutter", link: "" },
+  { text: "How it works", link: "" },
+  { text: "Contact Us", link: "" },
+  { text: "Try For Free", link: "" },
 ];
 </script>
 
