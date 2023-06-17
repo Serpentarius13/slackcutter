@@ -11,32 +11,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      borderRadius: {
-        small: "1rem",
-        "small-medium": "1.2rem",
-        medium: "2rem",
-        "semi-medium": "1.8rem",
-
-        "semi-big": "2.4rem",
-        big: "3.2rem",
-        biggest: "10rem",
-      },
+      borderRadius: {},
 
       colors: {
-        spotlight: "#FFE2A3",
-        pink: "#ff79f2",
-        black: "#212121",
-        "dark-black": "#151515",
-        "darkest-black": "#101010",
-        darkNeutral: "#1e1d21",
-        "light-green": "#B4E681",
-        yellow: "#FFDF37",
-        red: "#FA4D08",
-        orange: "#FFD362",
-        blue: "#0500FF",
-        white: "#fff",
-        "orange-bright": "#ea580c",
-        green: "#16a34a",
+        "light-gray": "#B4BCD0",
+        purple: "#7132EF",
+        yellow: "#FFDA00",
       },
     },
 

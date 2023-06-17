@@ -1,6 +1,18 @@
 @layer components {
   .container {
-    @apply mx-auto w-full max-w-[163rem]  2xl:px-[2.6rem] lg:px-[2rem] md:px-[1.6rem] sm:px-[1.2rem];
+    @apply max-w-[120rem] w-full mx-auto;
+  }
+
+  .text-small {
+    @apply text-[1.4rem] tracking-[0.48px] leading-[3.4rem];
+  }
+
+  .text-medium {
+    @apply text-[1.6rem]  tracking-[0.48px] leading-[3.4rem];
+  }
+
+  .text-big {
+    @apply text-[1.8rem] tracking-[0.48px] leading-[160%];
   }
 }
 

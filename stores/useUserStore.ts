@@ -1,12 +1,12 @@
 import { defineStore } from "pinia";
-
-import { AUTH_COOKIE_KEY } from "~/features/constants/auth.constants";
+import { AUTH_COOKIE_KEY } from "~/src/shared/features/constants/auth.constants";
 import {
   IAccount,
   TLoginData,
   TRegisterData,
 } from "~/features/types/auth.types";
-import { setCookieClient } from "~/features/utils/cookie";
+
+import { setCookieClient } from "~/src/shared/features/utils/cookie";
 
 interface IUserStoreState {
   user: Partial<IAccount> | null;
