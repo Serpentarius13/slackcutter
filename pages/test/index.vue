@@ -1,5 +1,7 @@
 <template>
-  <WidgetsHomeHeader  class="pt-[20.6rem]"/>
+  <WidgetsHomeHeader />
+
+  <WidgetsHomeHero class="mt-[19.7rem]" />
 </template>
 
 <script setup lang="ts">

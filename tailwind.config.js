@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       borderRadius: {
         big: "8.2rem",
+        medium: '2rem'
       },
 
       colors: {

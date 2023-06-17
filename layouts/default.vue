@@ -1,6 +1,6 @@
 <template>
   <SharedUiNavbar />
-  <main>
+  <main class="pt-[20.6rem]">
     <slot />
   </main>
 </template>

@@ -15,8 +15,8 @@
 import { ButtonSizes, ButtonThemes } from "./buttonThemes";
 
 type ButtonProps = {
-  size: ButtonSizes;
-  theme: ButtonThemes;
+  size?: ButtonSizes;
+  theme?: ButtonThemes;
 };
 
 const props = withDefaults(defineProps<ButtonProps>(), {
@@ -46,7 +46,7 @@ const fontSizes: Record<ButtonSizes, string> = {
   // sizes
 
   &.medium {
-    @apply rounded-big px-[6.05rem] py-[1.6rem];
+    @apply rounded-big  w-[20.1rem] h-[6.6rem];
   }
 }
 </style>

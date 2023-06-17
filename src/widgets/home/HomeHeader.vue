@@ -3,7 +3,7 @@
     <div
       class="container flex flex-col justify-center items-center text-center"
     >
-      <h1 class="heading-big">
+      <h1 class="heading-biggest">
         Don't have time to master <br />
         professional editing tools?
       </h1>
@@ -33,10 +33,7 @@
         </SharedUiButton>
       </div>
 
-      <NuxtImg
-        src="/img/home/home-header.png"
-        class="mt-[1.9rem] w-[60.5rem] h-[27rem] max-w-screen"
-      />
+      <img src="/img/home/home-header.png" class="mt-[1.9rem] max-w-screen" />
     </div>
   </section>
 </template>

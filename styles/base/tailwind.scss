@@ -16,11 +16,18 @@
   }
 
   .heading-big {
-    @apply text-[5rem] leading-[120%] font-bebas uppercase text-white;
+    @apply text-[5rem] leading-[120%] font-bebas uppercase;
+  }
+
+  .heading-biggest {
+    @apply text-[6.8rem] leading-[120%] font-bebas uppercase;
   }
 }
 
 @layer base {
+  .borderline {
+    @apply border-[1px] border-white border-opacity-[15%];
+  }
 }
 
 @layer utilities {

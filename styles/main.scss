@@ -18,9 +18,5 @@ html {
 }
 
 body {
-  @apply relative overflow-x-hidden min-w-max min-h-max ;
-}
-
-img {
-  @apply block max-w-full;
+  @apply relative overflow-x-hidden min-w-max min-h-max text-white;
 }
