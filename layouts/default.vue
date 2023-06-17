@@ -1,16 +1,14 @@
 <template>
   <SharedUiNavbar />
-  <slot />
-
-  <NuxtImg
-    src="/img/landing-bg.png"
-    class="fixed left-0 top-0 min-w-full min-h-full -z-[2]"
-  />
+  <main>
+    <slot />
+  </main>
 </template>
 
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
-.a {
+:global(body) {
+  background: url("/img/home/home-bg.png") 0 0 / cover no-repeat, #0a0f17;
 }
 </style>

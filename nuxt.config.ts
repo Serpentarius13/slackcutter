@@ -32,5 +32,5 @@ export default defineNuxtConfig({
     typedPages: true,
   },
 
-  components: [{ path: "~/src" }],
+  components: [{ path: "~/src" }, { path: "~/layouts" }],
 });

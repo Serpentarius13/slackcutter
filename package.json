@@ -28,7 +28,7 @@
     "vue-toastification": "^1.7.14"
   },
   "dependencies": {
-    "@nuxt/image-edge": "^1.0.0-28059208.2abef1b",
+    "@nuxt/image-edge": "1.0.0-rc.1-28110023.6b8ab9c",
     "@nuxtjs/tailwindcss": "^6.6.7",
     "@pinia/nuxt": "^0.4.9",
     "@vee-validate/nuxt": "^4.9.1",

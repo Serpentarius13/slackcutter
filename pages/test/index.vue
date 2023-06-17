@@ -1,5 +1,5 @@
 <template>
-  <WidgetsHomeHeader />
+  <WidgetsHomeHeader  class="pt-[20.6rem]"/>
 </template>
 
 <script setup lang="ts">
