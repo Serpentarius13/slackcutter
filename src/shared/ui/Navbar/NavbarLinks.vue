@@ -1,12 +1,12 @@
 <template>
-  <div class="flex items-center gap-[6rem]">
+ 
     <SharedUiNavbarLink
       v-for="link in navLinks"
       :link="link"
       :key="link.text"
       class="last:text-white"
     />
-  </div>
+ 
 </template>
 
 <script setup lang="ts">

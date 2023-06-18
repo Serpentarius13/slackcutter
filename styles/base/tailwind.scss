@@ -1,26 +1,26 @@
 @layer components {
   .container {
-    @apply max-w-[120rem] w-full mx-auto;
+    @apply mx-auto w-full max-w-[120rem] xl:max-w-[95vw];
   }
 
   .text-small {
-    @apply text-[1.4rem] tracking-[0.48px] leading-[3.4rem];
+    @apply text-[1.4rem] leading-[3.4rem] tracking-[0.48px];
   }
 
   .text-medium {
-    @apply text-[1.6rem]  tracking-[0.48px] leading-[3.4rem];
+    @apply text-[1.6rem]  leading-[3.4rem] tracking-[0.48px];
   }
 
   .text-big {
-    @apply text-[1.8rem] tracking-[0.48px] leading-[160%];
+    @apply text-[1.8rem] leading-[160%] tracking-[0.48px];
   }
 
   .heading-big {
-    @apply text-[5rem] leading-[120%] font-bebas uppercase;
+    @apply font-bebas text-[5rem] uppercase leading-[120%];
   }
 
   .heading-biggest {
-    @apply text-[6.8rem] leading-[120%] font-bebas uppercase;
+    @apply font-bebas text-[6.8rem] uppercase leading-[120%];
   }
 }
 
