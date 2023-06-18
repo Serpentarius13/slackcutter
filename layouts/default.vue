@@ -1,6 +1,6 @@
 <template>
   <SharedUiNavbar />
-  <main class="pt-[20.6rem]">
+  <main class="pt-[20.6rem] lg:pt-[15rem]">
     <slot />
   </main>
 </template>
