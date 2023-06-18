@@ -60,22 +60,18 @@ export default defineNuxtConfig({
       icons: [
         {
           src: "/icons/icon_64.jpg",
-          sizes: "64x64",
           type: "image/jpg",
         },
         {
           src: "/icons/icon_144.jpg",
-          sizes: "144x144",
           type: "image/jpg",
         },
         {
           src: "/icons/icon_192.jpg",
-          sizes: "192x192",
           type: "image/jpg",
         },
         {
           src: "/icons/icon_512.jpg",
-          sizes: "512x512",
           type: "image/jpg",
         },
       ],
