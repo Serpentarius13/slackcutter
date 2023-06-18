@@ -45,10 +45,10 @@
         </SharedUiButton>
       </div>
 
-      <NuxtImg
+      <img
         src="/img/home/home-header.webp"
         alt="Video editing is blocking Pacman's path to Ghost"
-        class="max-w-screen mt-[1.9rem]"
+        class="mt-[1.9rem]"
         data-aos="rotate-in"
         :data-aos-delay="delayRightAfterStart"
       />

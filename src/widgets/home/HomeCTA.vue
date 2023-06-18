@@ -1,6 +1,6 @@
 <template>
   <section class="container flex flex-col items-center gap-[6.4rem]">
-    <NuxtImg
+    <img
       src="/img/home/home-ghost.png"
       alt="Yellow ghost from Pacman game"
       class="ghost"

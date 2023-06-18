@@ -1,5 +1,5 @@
 <template>
-  <NuxtImg src="/logo.svg" alt="Slack Cutter Logo" />
+  <img src="/logo.svg" alt="Slack Cutter Logo" />
 </template>
 
 <script setup lang="ts"></script>
