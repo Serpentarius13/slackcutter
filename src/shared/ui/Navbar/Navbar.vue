@@ -1,11 +1,15 @@
 <template>
-  <header
-    class="container rounded-full flex justify-between items-center py-[1.6rem] px-[6rem] absolute mt-[2.8rem] left-1/2 -translate-x-1/2 bg-white bg-opacity-[3%]"
-  >
-    <SharedUiLogo class="absolute w-[7.8rem] aspect-square left-0 top-1/2 -translate-y-1/2" />
+  <div data-aos="fade-in" data-aos-duration="2000"> 
+    <header
+      class="container absolute left-1/2 mt-[2.8rem] flex -translate-x-1/2 items-center justify-between rounded-full bg-white bg-opacity-[3%] px-[6rem] py-[1.6rem] backdrop-blur-medium"
+    >
+      <SharedUiLogo
+        class="absolute left-0 top-1/2 aspect-square w-[7.8rem] -translate-y-1/2"
+      />
 
-    <SharedUiNavbarLinks class="ml-auto" />
-  </header>
+      <SharedUiNavbarLinks class="ml-auto" />
+    </header>
+  </div>
 </template>
 
 <script setup lang="ts"></script>

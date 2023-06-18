@@ -10,15 +10,22 @@
           <component
             :is="{ ...store.modalState?.component }"
             v-bind="store.modalState?.props"
-            
           />
         </div>
       </div>
     </Transition>
+    <button
+      class="fixed right-[2rem] top-[2rem] z-[501]"
+      @click="store.closeModal"
+      v-if="store.modalState?.component"
+    >
+      <NuxtIcon name="main/cross" />
+    </button>
   </Teleport>
 </template>
 
 <script setup lang="ts">
+import { useEventListener } from "~/src/shared/features/hooks/useEventListener";
 import useModalStore from "~/stores/useModalStore";
 
 const store = useModalStore();
@@ -31,6 +38,7 @@ const closeModal = () => {
 const handleKeyEscape = (event: KeyboardEvent) => {
   if (event.key === "Escape") closeModal();
 };
+
 useEventListener(document, "keydown", handleKeyEscape);
 </script>
 
@@ -40,11 +48,11 @@ useEventListener(document, "keydown", handleKeyEscape);
     position: fixed;
     width: 100vw;
     height: 100vh;
-    @apply bg-dark-black bg-opacity-20;
+    @apply bg-black bg-opacity-20;
 
     left: 0;
     top: 0;
-    z-index: 123123;
+    z-index: 500;
 
     display: flex;
     align-items: center;
@@ -60,6 +68,6 @@ useEventListener(document, "keydown", handleKeyEscape);
 .modalFade-enter-from,
 .modalFade-leave-to {
   opacity: 0;
-  transform: translateY(-3rem);
+  transform: translateY(7rem);
 }
 </style>

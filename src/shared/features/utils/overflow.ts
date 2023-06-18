@@ -5,5 +5,5 @@ export function lockBody() {
 
 export function unlockBody() {
   const body = document.body;
-  if (body) body.style.overflow = "auto";
+  if (body) body.style.overflowY = "auto";
 }

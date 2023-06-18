@@ -1,6 +1,6 @@
 <template>
   <figure
-    class="borderline flex min-h-[38rem] min-w-full flex-col items-center justify-center rounded-medium bg-white bg-opacity-small pb-[3.8rem] pt-[5.2rem] backdrop-blur-medium"
+    class="borderline flex min-h-[38rem] min-w-full flex-col items-center justify-center rounded-medium bg-white bg-opacity-small pb-[3.8rem] pt-[5.2rem]"
   >
     <div class="flex flex-1 items-center justify-center">
       <img :src="img" :alt="alt" class=" " />

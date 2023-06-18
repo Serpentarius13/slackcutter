@@ -12,11 +12,11 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 77.5%;
 
   font-family: "Mona Sans", sans-serif;
 }
 
 body {
-  @apply relative overflow-x-hidden min-w-max min-h-max text-white;
+  @apply relative min-h-max min-w-max overflow-x-hidden text-white;
 }

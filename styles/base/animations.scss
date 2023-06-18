@@ -7,3 +7,20 @@
 .fade-leave-active {
   @apply transition-all;
 }
+
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+[data-aos="rotate-in"] {
+  @apply translate-y-full rotate-[20deg] opacity-0;
+
+  &.aos-animate {
+    @apply translate-y-0 rotate-0 opacity-100;
+  }
+}

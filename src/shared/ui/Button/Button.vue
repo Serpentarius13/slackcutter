@@ -31,22 +31,39 @@ const fontSizes: Record<ButtonSizes, string> = {
 
 <style scoped lang="scss">
 .btn {
-  @apply w-fit flex items-center justify-center border-2 border-solid border-transparent outline-none;
+  @apply flex w-fit items-center justify-center border-2 border-solid border-transparent outline-none;
 
   // themes
 
   &.purple {
-    @apply bg-purple text-white hover:bg-transparent hover:border-white hover:border-opacity-40;
+    @apply bg-purple text-white hover:border-white hover:border-opacity-40 hover:bg-transparent;
   }
 
   &.outline {
-    @apply bg-transparent text-white hover:bg-purple border-white border-opacity-40 hover:border-transparent;
+    @apply border-white border-opacity-40 bg-transparent text-white hover:border-transparent hover:bg-purple;
+  }
+
+  &.yellow {
+    background: radial-gradient(
+        42.56% 215.72% at 92.43% 82.5%,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(0, 0, 0, 0) 100%
+      )
+      #ffda00;
+
+    box-shadow: 0px 7px 114px rgba(255, 218, 0, 0.45);
+
+    @apply rounded-big text-black;
+
+    &:hover {
+      box-shadow: 0px 7px 50px rgba(255, 218, 0);
+    }
   }
 
   // sizes
 
   &.medium {
-    @apply rounded-big  w-[20.1rem] h-[6.6rem];
+    @apply h-[6.6rem]  w-[20.1rem] rounded-big;
   }
 }
 </style>

@@ -2,7 +2,9 @@ import { defineStore } from "pinia";
 
 import { extend } from "@vue/shared";
 
-import { lockBody, unlockBody } from "~/src/shared/utils/overflow";
+import { lockBody, unlockBody } from "~/src/shared/features/utils/overflow";
+import { IframeHTMLAttributes } from "nuxt/dist/app/compat/capi";
+import ModalIFrameVue from "~/src/widgets/other/Modal/ModalIFrame.vue";
 
 const component = extend({});
 type VueComponent = InstanceType<typeof component>;
@@ -42,6 +44,16 @@ const useModalStore = defineStore("modalStore", {
       this.modalState = basicState;
 
       unlockBody();
+    },
+
+    openIFrameModal(url: string) {
+      const options: IframeHTMLAttributes = {
+        src: url,
+      };
+
+      console.log(url);
+
+      this.openModal({ component: ModalIFrameVue, props: options });
     },
   },
 });

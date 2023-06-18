@@ -4,7 +4,7 @@
 
     <ul class="flex flex-col gap-[2rem]">
       <li>
-        <EntitiesHomeProgressStep :step="1">
+        <EntitiesHomeProgressStep :step="1" width="32.5%">
           Paste a link to your full-length video on YouTube or Vimeo <br />
           <span class="text-light-purple">(free)</span> or upload one from your
           phone
@@ -13,14 +13,14 @@
       </li>
 
       <li>
-        <EntitiesHomeProgressStep :step="2">
+        <EntitiesHomeProgressStep :step="2" width="48.3%">
           Specify a track on Spotify or choose one <br />
           from your playlist on the phone —
           <span class="text-light-purple">optional</span>
         </EntitiesHomeProgressStep>
       </li>
       <li>
-        <EntitiesHomeProgressStep :step="3">
+        <EntitiesHomeProgressStep :step="3" width="100%">
           Choose a template — fpv, GoPro or streaming <br />
 
           <span class="flex items-center gap-[0.3rem]">

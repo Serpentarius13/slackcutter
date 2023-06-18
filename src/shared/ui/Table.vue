@@ -10,6 +10,7 @@
       </tr>
     </thead>
 
+    
     <h2
       class="absolute w-full -translate-y-[4rem] lg:text-center text-[2rem] font-bold lg:-translate-y-[3rem] sm:text-[1.6rem] xs:text-[1.2rem]"
     >

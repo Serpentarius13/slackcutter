@@ -1,17 +1,22 @@
 <template>
   <div
-    class="borderline text-medium relative grid grid-cols-2 rounded-bigger bg-white bg-opacity-[6%] px-[8.9rem] py-[4.5rem]"
+    class="borderline text-medium relative grid grid-cols-2 gap-[4.4rem] rounded-bigger bg-white bg-opacity-[6%] px-[8.9rem] py-[4.5rem]"
     ref="progressRef"
   >
     <h5 class="heading-big">{{ stepComputed }}</h5>
 
-    <div>
+    <div
+      :class="[
+        isShowingProgress && step >= 3 && '!text-white',
+        'text-light-gray',
+      ]"
+    >
       <slot />
     </div>
 
     <Transition name="width">
       <div
-        :style="{ width: `${step * 33.3 + 1}%` }"
+        :style="{ width }"
         class="absolute left-0 top-1/2 -z-[2] h-full max-w-full -translate-y-1/2 rounded-bigger bg-purple"
         v-if="isShowingProgress"
       />
@@ -24,6 +29,7 @@ import { useIntersectionObserver } from "~/src/shared/features/hooks/useIntersec
 
 interface IProgressStep {
   step: number;
+  width: string;
 }
 
 const { step } = defineProps<IProgressStep>();
@@ -34,12 +40,6 @@ const progressRef = ref<HTMLElement | null>();
 const stepComputed = computed<string>(() =>
   step >= 10 ? `${step}` : `0${step}`
 );
-
-console.log(isShowingProgress.value);
-
-watchEffect(() => {
-  console.log(isShowingProgress.value);
-});
 
 useIntersectionObserver(progressRef, () => (isShowingProgress.value = true));
 </script>
