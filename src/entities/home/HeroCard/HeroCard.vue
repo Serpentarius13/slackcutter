@@ -1,8 +1,8 @@
 <template>
   <figure
-    class="min-h-[38rem] min-w-full flex items-center justify-center flex-col rounded-medium hero-card pb-[3.8rem] pt-[5.2rem] borderline"
+    class="borderline flex min-h-[38rem] min-w-full flex-col items-center justify-center rounded-medium bg-white bg-opacity-small pb-[3.8rem] pt-[5.2rem] backdrop-blur-medium"
   >
-    <div class="flex items-center justify-center flex-1">
+    <div class="flex flex-1 items-center justify-center">
       <img :src="img" :alt="alt" class=" " />
     </div>
     <figcaption class="text-big mt-auto max-w-[45rem]">
@@ -19,9 +19,4 @@ interface IHero extends IHeroCard {}
 const props = defineProps<IHero>();
 </script>
 
-<style scoped lang="scss">
-.hero-card {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(17px);
-}
-</style>
+<style scoped lang="scss"></style>

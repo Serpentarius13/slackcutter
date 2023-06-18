@@ -2,6 +2,8 @@
   <WidgetsHomeHeader />
 
   <WidgetsHomeHero class="mt-[19.7rem]" />
+
+  <WidgetsHomeSteps />
 </template>
 
 <script setup lang="ts">

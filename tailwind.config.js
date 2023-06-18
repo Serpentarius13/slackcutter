@@ -13,7 +13,8 @@ module.exports = {
     extend: {
       borderRadius: {
         big: "8.2rem",
-        medium: '2rem'
+        medium: "2rem",
+        bigger: "17rem",
       },
 
       colors: {
@@ -21,12 +22,20 @@ module.exports = {
         purple: "#7132EF",
         yellow: "#FFDA00",
         "darkest-blue": "#0A0F17",
+        "light-purple": "#D1BAFF",
       },
 
       fontFamily: {
         bebas: ["Bebas Neue", "sans-serif"],
       },
       backgroundImage: {},
+      backdropBlur: {
+        medium: "17px",
+      },
+
+      backgroundOpacity: {
+        small: ".06",
+      },
     },
 
     screens: {
