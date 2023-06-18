@@ -32,7 +32,7 @@ const modalStore = useModalStore();
 
 <style scoped lang="scss">
 .home-video {
-  background: url("/img/home/home-video.png") 0 0 / cover no-repeat;
+  background: url("/img/home/home-video.webp") 0 0 / cover no-repeat;
 
   div {
     background: rgba(217, 217, 217, 0.3);

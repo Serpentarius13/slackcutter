@@ -59,20 +59,24 @@ export default defineNuxtConfig({
 
       icons: [
         {
-          src: "/icons/icon_64.jpg",
-          type: "image/jpg",
+          src: "/icons/icon_64.png",
+          type: "image/png",
+          sizes: "64x64",
         },
         {
-          src: "/icons/icon_144.jpg",
-          type: "image/jpg",
+          src: "/icons/icon_144.png",
+          type: "image/png",
+          sizes: "144x144",
         },
         {
-          src: "/icons/icon_192.jpg",
-          type: "image/jpg",
+          src: "/icons/icon_192.png",
+          type: "image/png",
+          sizes: "192x192",
         },
         {
-          src: "/icons/icon_512.jpg",
-          type: "image/jpg",
+          src: "/icons/icon_512.png",
+          type: "image/png",
+          sizes: "512x512",
         },
       ],
     },
