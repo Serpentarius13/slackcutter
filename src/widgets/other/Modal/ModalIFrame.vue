@@ -1,6 +1,6 @@
 <template>
   <div>
-    <iframe v-bind="props" width="600" height="300" />
+    <iframe v-bind="props" width="900" height="450" />
   </div>
 </template>
 

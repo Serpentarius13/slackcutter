@@ -1,6 +1,7 @@
 <template>
   <section
     class="container flex flex-col gap-[7.6rem] items-center text-center"
+    id="about"
   >
     <header>
       <h2 class="heading-big">

@@ -2,6 +2,7 @@
   <section
     class="container relative flex flex-col items-center justify-center"
     v-bind="$attrs"
+    id="video"
   >
     <button
       class="home-video group relative flex aspect-square w-[52.4rem] max-w-[95vw] items-center justify-center rounded-full"

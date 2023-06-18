@@ -1,18 +1,18 @@
 <template>
   <a
-    :href="link.link"
     :class="[
-      'text-small text-light-gray  relative overflow-x-hidden px-[0.5rem]',
+      'text-small relative  overflow-x-hidden px-[0.5rem] text-light-gray',
       isHovering && '!text-black',
     ]"
     @mouseenter="onHover"
     @mouseleave="onUnhover"
+    :href="link.link"
   >
     {{ link.text }}
 
     <Transition name="slide">
       <div
-        class="absolute bg-yellow min-w-full h-full left-0 top-0 px-[1rem] -z-[2]"
+        class="absolute left-0 top-0 -z-[2] h-full min-w-full bg-yellow px-[1rem]"
         v-if="isHovering"
       />
     </Transition>
@@ -27,7 +27,7 @@ interface INavbarLInk {
   link: TNavLink;
 }
 
-defineProps<INavbarLInk>();
+const { link } = defineProps<INavbarLInk>();
 
 const { isHovering, onHover, onUnhover } = useHover();
 </script>
@@ -36,7 +36,7 @@ const { isHovering, onHover, onUnhover } = useHover();
 .nav-link {
   &::after {
     content: "";
-    @apply w-full h-full bg-yellow -translate-x-full;
+    @apply h-full w-full -translate-x-full bg-yellow;
   }
 }
 
