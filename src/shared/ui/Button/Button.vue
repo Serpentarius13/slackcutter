@@ -63,7 +63,7 @@ const fontSizes: Record<ButtonSizes, string> = {
   // sizes
 
   &.medium {
-    @apply h-[6.6rem]  w-[20.1rem] rounded-big;
+    @apply h-[6.6rem]  w-[20.1rem] rounded-big lg:w-[17rem];
   }
 }
 </style>

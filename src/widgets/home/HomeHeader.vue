@@ -28,7 +28,7 @@
       </h2>
 
       <div
-        class="mt-[4.2rem] flex items-center gap-[2.2rem]"
+        class="mt-[4.2rem] flex items-center gap-[2.2rem] sm:flex-col"
         data-aos="fade-up"
         :data-aos-delay="delayRightAfterStart + 500"
       >
@@ -63,6 +63,6 @@ import { ButtonThemes } from "~/src/shared/ui/Button/buttonThemes";
 
 <style scoped lang="scss">
 .header {
-  @apply min-h-[91.1rem] w-screen;
+  @apply min-h-[91.1rem] w-screen lg:min-h-0;
 }
 </style>

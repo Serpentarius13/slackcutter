@@ -4,23 +4,23 @@
   }
 
   .text-small {
-    @apply text-[1.4rem] leading-[3.4rem] tracking-[0.48px];
+    @apply text-[1.4rem] leading-[3.4rem] tracking-[0.48px] md:text-[1.2rem];
   }
 
   .text-medium {
-    @apply text-[1.6rem]  leading-[3.4rem] tracking-[0.48px];
+    @apply text-[1.6rem]  leading-[3.4rem] tracking-[0.48px] md:text-[1.4rem];
   }
 
   .text-big {
-    @apply text-[1.8rem] leading-[160%] tracking-[0.48px];
+    @apply text-[1.8rem] leading-[160%] tracking-[0.48px] md:text-[1.6rem];
   }
 
   .heading-big {
-    @apply font-bebas text-[5rem] uppercase leading-[120%];
+    @apply font-bebas text-[5rem] uppercase leading-[120%] lg:text-[3.5rem] sm:text-[3rem];
   }
 
   .heading-biggest {
-    @apply font-bebas text-[6.8rem] uppercase leading-[120%];
+    @apply font-bebas text-[6.8rem] uppercase leading-[120%] lg:text-[4.5rem] sm:text-[4rem];
   }
 }
 

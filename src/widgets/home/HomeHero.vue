@@ -15,12 +15,12 @@
       </h3>
     </header>
 
-    <div class="grid grid-cols-2 gap-[2rem] w-full">
+    <div class="grid grid-cols-2 gap-[2rem] w-full md:!grid-cols-1">
       <EntitiesHomeHeroCard
         v-for="card in heroCards"
         v-bind="card"
         :key="card.alt"
-        class="last:col-span-2"
+        class="last:col-span-2 md:last:col-span-1"
       />
     </div>
   </section>

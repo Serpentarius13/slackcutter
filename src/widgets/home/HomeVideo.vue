@@ -5,7 +5,7 @@
     id="video"
   >
     <button
-      class="home-video group relative flex aspect-square w-[52.4rem] max-w-[95vw] items-center justify-center rounded-full"
+      class="home-video group relative flex aspect-square w-[52.4rem] max-w-[95vw] lg:w-[45rem] md:w-[35rem] sm:w-[25rem] items-center justify-center rounded-full"
       @click="
         modalStore.openIFrameModal('https://www.youtube.com/embed/q08E8A-LnA8')
       "
@@ -18,7 +18,7 @@
     </button>
 
     <div
-      class="tech-grid absolute -bottom-[11rem] h-[17.5rem] w-screen "
+      class="tech-grid absolute -bottom-[11rem] h-[17.5rem] w-screen"
       data-aos="fade-in"
       data-aos-duration="1000"
     />
@@ -56,6 +56,6 @@ const modalStore = useModalStore();
 }
 
 .tech-grid {
-  background: url("/img/home/home-video-grid.png") 0 0 / cover no-repeat;
+  background: url("/img/home/home-video-grid.png") 0 0 / contain no-repeat;
 }
 </style>

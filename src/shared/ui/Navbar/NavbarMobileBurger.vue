@@ -10,7 +10,7 @@
   <Teleport to="body">
     <Transition name="slide">
       <div
-        class="fixed left-0 top-0 flex h-full w-full flex-col items-center justify-center gap-[2.4rem] bg-darkest-blue"
+        class="fixed left-0 top-0 flex h-full w-full flex-col items-center justify-center gap-[2.4rem] bg-darkest-blue z-[400] overflow-x-hidden"
         role="dialog"
         v-if="isMenuShowing"
         @click.self="closeMenu"
