@@ -44,6 +44,9 @@ export default defineNuxtConfig({
         },
       ],
       title: "SlackCutter",
+      htmlAttrs: {
+        lang: "en",
+      },
     },
   },
 

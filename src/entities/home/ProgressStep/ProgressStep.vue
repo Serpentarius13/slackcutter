@@ -3,7 +3,7 @@
     class="borderline text-medium relative grid grid-cols-2 gap-[4.4rem] rounded-bigger bg-white bg-opacity-[6%] px-[8.9rem] py-[4.5rem]"
     ref="progressRef"
   >
-    <h5 class="heading-big">{{ stepComputed }}</h5>
+    <p class="heading-big">{{ stepComputed }}</p>
 
     <div
       :class="[
