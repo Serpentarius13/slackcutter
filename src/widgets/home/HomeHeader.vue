@@ -63,6 +63,6 @@ import { ButtonThemes } from "~/src/shared/ui/Button/buttonThemes";
 
 <style scoped lang="scss">
 .header {
-  @apply min-h-[91.1rem] w-screen lg:min-h-0;
+  @apply min-h-[80rem] w-screen lg:min-h-0;
 }
 </style>

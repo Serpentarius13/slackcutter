@@ -7,7 +7,7 @@
 
   <WidgetsHomeSteps class="mt-[15rem]" />
 
-  <WidgetsHomeCTA class="mt-[21.2rem]" />
+  <WidgetsHomeCTA class="!mt-[1000rem]" />
   <WidgetsHomeFooter class="mt-[10.2rem]" />
 </template>
 
