@@ -1,7 +1,7 @@
 <template>
   <WidgetsHomeHeader />
 
-  <WidgetsHomeHero class="mt-[10rem]" />
+  <WidgetsHomeHero class="mt-[19.7rem]" />
 
   <WidgetsHomeVideo class="mt-[20rem]" />
 

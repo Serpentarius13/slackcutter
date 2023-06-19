@@ -11,8 +11,18 @@
 :global(body) {
   background: url("/img/home/home-bg.png") 0 0 / cover no-repeat, #0a0f17;
 
+  @media (max-width: 1440px) {
+    background: url("/img/home/home-bg-laptop.png") 0 0 / cover no-repeat,
+      #0a0f17;
+  }
+
   @media (max-width: 1024px) {
     background: url("/img/home/home-bg-tablet.png") 0 0 / cover no-repeat,
+      #0a0f17;
+  }
+
+  @media (max-width: 600px) {
+    background: url("/img/home/home-bg-phone-big.png") 0 0 / cover no-repeat,
       #0a0f17;
   }
 
