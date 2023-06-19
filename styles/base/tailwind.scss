@@ -16,11 +16,11 @@
   }
 
   .heading-big {
-    @apply font-bebas text-[5rem] uppercase leading-[120%] lg:text-[3.5rem] sm:text-[3rem];
+    @apply font-bebas text-[5rem] uppercase leading-[120%] lg:text-[3.5rem] sm:text-[3rem] xs:text-[2.5rem];
   }
 
   .heading-biggest {
-    @apply font-bebas text-[6.8rem] uppercase leading-[120%] lg:text-[4.5rem] sm:text-[4rem];
+    @apply font-bebas text-[6.8rem] uppercase leading-[120%] lg:text-[4.5rem] sm:text-[4rem] xs:text-[3rem];
   }
 }
 

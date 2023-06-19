@@ -1,5 +1,5 @@
 <template>
-  <div data-aos="fade-in" data-aos-duration="2000">
+  <div data-aos="fade-in" data-aos-duration="2000" data-aos-once="true">
     <header
       class="container absolute left-1/2 mt-[2.8rem] flex -translate-x-1/2 items-center justify-end rounded-full bg-white bg-opacity-[3%] px-[6rem] py-[1.6rem] backdrop-blur-medium xl:px-[4rem] lg:px-[3rem]"
     >

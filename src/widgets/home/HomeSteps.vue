@@ -1,5 +1,5 @@
 <template>
-  <section class="container flex flex-col gap-[7.6rem]">
+  <section class="container flex flex-col gap-[7.6rem] md:gap-[4rem] sm:gap-[2rem]">
     <h2 class="heading-big mx-auto">Easy steps</h2>
 
     <ul class="flex flex-col gap-[2rem]">

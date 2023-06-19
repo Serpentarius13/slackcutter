@@ -7,6 +7,7 @@
         class="heading-biggest"
         data-aos="rotate-in"
         :data-aos-delay="delayRightAfterStart"
+        data-aos-once="true"
       >
         Don't have time to master <br />
         professional editing tools?
@@ -16,6 +17,7 @@
         class="text-big mt-[1.8rem]"
         data-aos="rotate-in"
         :data-aos-delay="delayRightAfterStart"
+        data-aos-once="true"
       >
         <span class="text-light-gray">
           Meet the new AI-based tool for automatic creation of previews
@@ -31,6 +33,7 @@
         class="mt-[4.2rem] flex items-center gap-[2.2rem] sm:flex-col"
         data-aos="fade-up"
         :data-aos-delay="delayRightAfterStart + 500"
+        data-aos-once="true"
       >
         <SharedUiButton :theme="ButtonThemes.purple">
           Start Now
@@ -48,8 +51,9 @@
       <img
         src="/img/home/home-header.webp"
         alt="Video editing is blocking Pacman's path to Ghost"
-        class="mt-[1.9rem]"
+        class="mt-[1.9rem] "
         data-aos="rotate-in"
+        data-aos-once="true"
         :data-aos-delay="delayRightAfterStart"
       />
     </div>

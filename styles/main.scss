@@ -20,5 +20,10 @@ html {
 }
 
 body {
-  @apply relative min-h-max min-w-max overflow-x-hidden text-white;
+  @apply relative min-h-max w-screen max-w-[100vw] overflow-x-hidden text-white;
+}
+
+#app {
+  max-width: 100%;
+  overflow-x: hidden;
 }

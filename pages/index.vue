@@ -2,7 +2,7 @@
   <WidgetsHomeHeader />
 
  
-  <WidgetsHomeHero class="mt-[10rem]" />
+  <WidgetsHomeHero class="mt-[10rem] md:mt-[27rem]" />
 
   <WidgetsHomeVideo class="mt-[20rem]" />
 
