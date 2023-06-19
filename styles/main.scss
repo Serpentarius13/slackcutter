@@ -12,11 +12,15 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 77.5%;
 
   font-family: "Mona Sans", sans-serif;
 
   @apply scroll-smooth;
+
+  @media (max-width: 1440px) {
+    font-size: 62.5%;
+  }
 }
 
 body {
