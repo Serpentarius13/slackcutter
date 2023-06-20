@@ -1,14 +1,5 @@
 <template>
-  <WidgetsHomeHeader />
-
-  <WidgetsHomeHero class="mt-[19.7rem]" />
-
-  <WidgetsHomeVideo class="mt-[20rem]" />
-
-  <WidgetsHomeSteps class="mt-[15rem]" />
-
-  <WidgetsHomeCTA class="!mt-[1000rem]" />
-  <WidgetsHomeFooter class="mt-[10.2rem]" />
+  <SharedUiVideo video-url="https://www.youtube.com/watch?v=AI9gHN-qa6w" />
 </template>
 
 <script setup lang="ts">

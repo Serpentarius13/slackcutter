@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <div id="player" class="w-full h-full"></div>
+    <div id="player" class="h-full w-full"></div>
     <Transition name="fade">
       <div
         class="shadowed absolute left-0 top-0 z-[120] flex h-full w-full items-center justify-center bg-black bg-opacity-40"
@@ -18,9 +18,9 @@
 </template>
 
 <script setup lang="ts">
-import pjs from "~/features/lib/pjs";
+import pjs from "../../lib/pjs";
 
-const props = defineProps<{ videoUrl: string}>();
+const props = defineProps<{ videoUrl: string }>();
 
 const isVideoStarted = ref<boolean>(false);
 
@@ -41,6 +41,14 @@ onMounted(() => {
 
     window.addEventListener("video-start", () => {
       player.api("play");
+    });
+
+    player.addEventListener("seek", () => {
+      console.log("seeked");
+    });
+
+    player.addEventListener("cut", () => {
+      console.log("cutted");
     });
   });
 });
