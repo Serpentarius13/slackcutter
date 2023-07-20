@@ -5,6 +5,7 @@
       props.theme,
       fontSizes[size],
       'btn transition-standard ',
+      props.style,
     ]"
   >
     <slot />
@@ -12,16 +13,18 @@
 </template>
 
 <script setup lang="ts">
-import { ButtonSizes, ButtonThemes } from "./buttonThemes";
+import { ButtonSizes, ButtonStyles, ButtonThemes } from "./buttonThemes";
 
 type ButtonProps = {
   size?: ButtonSizes;
   theme?: ButtonThemes;
+  style?: ButtonStyles;
 };
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   size: ButtonSizes.medium,
   theme: ButtonThemes.purple,
+  style: ButtonStyles.none,
 });
 
 const fontSizes: Record<ButtonSizes, string> = {
@@ -64,6 +67,16 @@ const fontSizes: Record<ButtonSizes, string> = {
 
   &.medium {
     @apply h-[6.6rem]  w-[20.1rem] rounded-big lg:w-[17rem];
+  }
+
+  // styles
+
+  &.unshadowed {
+    box-shadow: none !important;
+
+    &:hover {
+      box-shadow: none!important;
+    }
   }
 }
 </style>

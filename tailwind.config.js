@@ -23,6 +23,9 @@ module.exports = {
         yellow: "#FFDA00",
         "darkest-blue": "#0A0F17",
         "light-purple": "#D1BAFF",
+        "dark-blue": "#2C3671",
+        "dark-purple": "#6931F0",
+        'light-black': '#1C1C1C'
       },
 
       fontFamily: {

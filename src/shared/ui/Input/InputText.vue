@@ -1,7 +1,7 @@
 <template>
   <CommonInputError :error="error">
-    <div class="borderline-transparent relative w-full border-0 border-b-[1px]">
-      <input
+    <div class="text-medium px-[2.6rem] py-[1.8rem]">
+      <!-- <input
         :class="[
           'peer w-full border-none bg-transparent pb-[1.1rem] text-[1.9rem] font-medium focus:outline-none ',
           icon && 'pl-[2.9rem]',
@@ -9,16 +9,16 @@
         :type="inputType"
         :placeholder="placeholder"
         v-model="model"
-      />
+      /> -->
 
-      <NuxtIcon
+      <!-- <NuxtIcon
         v-if="icon"
         :name="icon"
         class="absolute left-[2px] top-[35%] aspect-square w-[1.5rem] -translate-y-1/2 opacity-20 peer-focus-visible:text-light-green peer-focus-visible:opacity-100"
-      />
+      /> -->
 
       <button
-        class="absolute right-0 top-0 h-[1.2rem]"
+        class="absolute right-[2rem] top-1/2 h-[1.2rem] -translate-y-1/2"
         @click="changeInputType"
         type="button"
       >
@@ -45,9 +45,9 @@ const props = withDefaults(defineProps<ITextInput>(), { type: "text" });
 
 const inputType = ref<TInputType>(props.type);
 
-const iconNameComputed = computed<"input/eye-off" | "input/eye">(() => {
+const iconNameComputed = computed<"input/eye-off" | "input/eye-on">(() => {
   if (inputType.value === "password") return "input/eye-off";
-  else return "input/eye";
+  else return "input/eye-on";
 });
 
 function changeInputType() {
