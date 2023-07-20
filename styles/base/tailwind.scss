@@ -15,6 +15,10 @@
     @apply text-[1.8rem] leading-[160%] tracking-[0.48px] md:text-[1.6rem];
   }
 
+  .text-bigger {
+    @apply text-[2.2rem] leading-[160%] tracking-[0.66px];
+  }
+
   .heading-big {
     @apply font-bebas text-[5rem] uppercase leading-[120%] lg:text-[3.5rem] sm:text-[3rem] xs:text-[2.5rem];
   }
@@ -39,5 +43,9 @@
     &::-webkit-scrollbar {
       @apply hidden;
     }
+  }
+
+  .absolute-center {
+    @apply left-1/2 top-1/2 -translate-x-1/2  -translate-y-1/2 absolute;
   }
 }

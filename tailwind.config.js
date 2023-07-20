@@ -15,6 +15,7 @@ module.exports = {
         big: "8.2rem",
         medium: "2rem",
         bigger: "17rem",
+        small: "1.8rem",
       },
 
       colors: {
@@ -25,7 +26,7 @@ module.exports = {
         "light-purple": "#D1BAFF",
         "dark-blue": "#2C3671",
         "dark-purple": "#6931F0",
-        'light-black': '#1C1C1C'
+        "light-black": "#1C1C1C",
       },
 
       fontFamily: {

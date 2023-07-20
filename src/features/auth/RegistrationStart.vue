@@ -1,16 +1,13 @@
 <template>
-  <form
-    class="flex max-w-[41.4rem] flex-col gap-[3.6rem]"
-    @submit.prevent="handleSubmit"
-  >
+  <SharedUiAuthFormSkeleton @submit.prevent="onSubmit">
     <div class="flex flex-col gap-[2.2rem]">
       <CommonInputText
-        placeholder="Ваш емейл"
+        placeholder="Your email"
         v-model="email"
         :error="errors.email"
       />
       <CommonInputText
-        placeholder="Пароль"
+        placeholder="Password"
         type="password"
         v-model="password"
         :error="errors.password"
@@ -23,23 +20,12 @@
       Forgot Password?
     </NuxtLink>
 
-    <SharedUiButton
-      :theme="ButtonThemes.yellow"
-      :style="ButtonStyles.unshadowed"
-      class="h-[6.6rem] w-full font-bold"
-    >
-      Sign In
-    </SharedUiButton>
-  </form>
+    <SharedUiAuthButton> Sign In </SharedUiAuthButton>
+  </SharedUiAuthFormSkeleton>
 </template>
 
 <script setup lang="ts">
-import { z } from "zod";
 import { loginSchema } from "~/src/features/types/auth.types";
-import {
-  ButtonStyles,
-  ButtonThemes,
-} from "~/src/shared/ui/Button/buttonThemes";
 
 const { handleSubmit, errors } = useForm({
   validationSchema: toTypedSchema(loginSchema),
