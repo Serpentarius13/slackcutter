@@ -41,7 +41,7 @@ const socialButtons: IAuthSocialButton[] = [
   },
 ];
 
-const emit = defineEmits(socialButtons.map((b) => b.icon));
+const emit = defineEmits(["apple", "google", "facebook"]);
 </script>
 
 <style scoped lang="scss"></style>

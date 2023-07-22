@@ -1,38 +1,27 @@
 <template>
   <SharedUiAuthFormSkeleton @submit.prevent="onSubmit">
-    <div class="flex flex-col gap-[2.2rem]">
-      <CommonInputText
-        placeholder="Your email"
-        v-model="email"
-        :error="errors.email"
-      />
-      <CommonInputText
-        placeholder="Password"
-        type="password"
-        v-model="password"
-        :error="errors.password"
-      />
-    </div>
+    <SharedUiInputText
+      placeholder="Your email"
+      v-model="email"
+      :error="errors.email"
+    />
 
-    <NuxtLink
-      class="text-small text-black underline opacity-50 hover:opacity-100"
-    >
-      Forgot Password?
-    </NuxtLink>
-
-    <SharedUiAuthButton> Sign In </SharedUiAuthButton>
+    <SharedUiAuthButton> Create account</SharedUiAuthButton>
+    <p class="text-small w-full text-center text-black opacity-[40%]">
+      By registering, you confirm that you have read and agreed to the Terms of
+      Policy
+    </p>
   </SharedUiAuthFormSkeleton>
 </template>
 
 <script setup lang="ts">
-import { loginSchema } from "~/src/features/types/auth.types";
+import { registerSchema } from "~/src/shared/features/hooks/auth.types";
 
 const { handleSubmit, errors } = useForm({
-  validationSchema: toTypedSchema(loginSchema),
+  validationSchema: toTypedSchema(registerSchema),
 });
 
 const { value: email } = useField("email");
-const { value: password } = useField("password");
 
 const onSubmit = handleSubmit((values) => {
   console.log(values);

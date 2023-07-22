@@ -4,8 +4,8 @@
       props.size,
       props.theme,
       fontSizes[size],
-      'btn transition-standard ',
-      props.style,
+      props.additions,
+      'btn transition-standard  ',
     ]"
   >
     <slot />
@@ -13,18 +13,18 @@
 </template>
 
 <script setup lang="ts">
-import { ButtonSizes, ButtonStyles, ButtonThemes } from "./buttonThemes";
+import { ButtonSizes, ButtonAdditions, ButtonThemes } from "./buttonThemes";
 
 type ButtonProps = {
   size?: ButtonSizes;
   theme?: ButtonThemes;
-  style?: ButtonStyles;
+ additions?: ButtonAdditions;
 };
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   size: ButtonSizes.medium,
   theme: ButtonThemes.purple,
-  style: ButtonStyles.none,
+ additions: ButtonAdditions.none,
 });
 
 const fontSizes: Record<ButtonSizes, string> = {
@@ -61,6 +61,15 @@ const fontSizes: Record<ButtonSizes, string> = {
     &:hover {
       box-shadow: 0px 7px 50px rgba(255, 218, 0);
     }
+
+    &.unshadowed {
+      box-shadow: none !important;
+
+      &:hover {
+        box-shadow: none !important;
+        @apply border-2 border-yellow bg-transparent;
+      }
+    }
   }
 
   // sizes
@@ -70,13 +79,11 @@ const fontSizes: Record<ButtonSizes, string> = {
   }
 
   // styles
+}
 
-  &.unshadowed {
-    box-shadow: none !important;
-
-    &:hover {
-      box-shadow: none!important;
-    }
+.btn.btn {
+  &:disabled {
+    @apply cursor-default bg-gray-400 text-white shadow-none hover:border-none hover:bg-gray-400 hover:shadow-none hover:outline-none;
   }
 }
 </style>

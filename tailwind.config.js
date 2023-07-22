@@ -16,15 +16,18 @@ module.exports = {
         medium: "2rem",
         bigger: "17rem",
         small: "1.8rem",
+        "medium-big": "5rem",
       },
 
       colors: {
         "light-gray": "#B4BCD0",
         purple: "#7132EF",
         yellow: "#FFDA00",
-        "darkest-blue": "#0A0F17",
+        "dark-blue": "#0A0F17",
         "light-purple": "#D1BAFF",
         "dark-blue": "#2C3671",
+
+        "darkest-blue": "#04072D",
         "dark-purple": "#6931F0",
         "light-black": "#1C1C1C",
       },

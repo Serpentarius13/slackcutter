@@ -1,5 +1,5 @@
 <template>
-
+  <WidgetsAuthRestore />
 </template>
 
 <script setup lang="ts"></script>

@@ -28,7 +28,11 @@ const digitPassed = computed<boolean>(() => !!props.digit || props.digit === 0);
 
 <style scoped lang="scss">
 .gradiented {
-  background: #ffffff50;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .roll {

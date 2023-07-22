@@ -51,7 +51,7 @@
       <img
         src="/img/home/home-header.webp"
         alt="Video editing is blocking Pacman's path to Ghost"
-        class="mt-[1.9rem] "
+        class="mt-[1.9rem]"
         data-aos="rotate-in"
         data-aos-once="true"
         :data-aos-delay="delayRightAfterStart"

@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="relative"
-    :style="!isLoaded ? { width, height } : {}"
-  >
+  <div class="relative" :style="!isLoaded ? { width, height } : {}">
     <CommonVideo :videoUrl="videoUrl" class="z-[220]" v-if="isLoaded" />
 
     <Transition name="fade">
@@ -21,7 +18,10 @@ import sleep from "~/features/utils/sleep";
 
 const isLoaded = ref<boolean>(false);
 
-const props = withDefaults(defineProps<{ videoUrl: string; width?: string, height?: string }>(), {width: '100vw', height: '100vh'})
+const props = withDefaults(
+  defineProps<{ videoUrl: string; width?: string; height?: string }>(),
+  { width: "100vw", height: "100vh" }
+);
 onMounted(() => {
   sleep(2000).then(() => (isLoaded.value = true));
 });

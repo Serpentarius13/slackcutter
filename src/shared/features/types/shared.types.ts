@@ -8,3 +8,8 @@ export interface IHeroCard {
   alt: string;
   text: string;
 }
+
+export interface IImage {
+  imgSource: string;
+  imgAlt: string;
+}

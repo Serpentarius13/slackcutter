@@ -13,9 +13,15 @@ export const registerSchema = z.object({
 });
 
 export const registerCompleteSchema = z.object({
-  firstName: z.string().nonempty("Enter your first name please"),
+  firstName: z
+    .string()
+    .nonempty("Enter your first name please")
+    .max(100, "Names should not be more than 100 symbols"),
 
-  lastName: z.string().nonempty("Enter your last name please"),
+  lastName: z
+    .string()
+    .nonempty("Enter your last name please")
+    .max(100, "Names should not be more than 100 symbols"),
 
   password: passwordRegex,
   confirmPassword: passwordRegex,

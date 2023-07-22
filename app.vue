@@ -11,6 +11,8 @@
 import AOS from "aos";
 
 onMounted(() => {
-  AOS.init({disable: true});
+  AOS.init({ disable: true });
 });
 </script>
+
+<style lang="scss"></style>

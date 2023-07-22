@@ -12,13 +12,21 @@
         videos in Instagram Reels, TikToks and Vines
       </h2>
 
-      <SharedUiButton :theme="ButtonThemes.yellow" :style="ButtonStyles.unshadowed"> Start now </SharedUiButton>
+      <SharedUiButton
+        :theme="ButtonThemes.yellow"
+        :additions="ButtonAdditions.unshadowed"
+      >
+        Start now
+      </SharedUiButton>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ButtonThemes, ButtonStyles} from "~/src/shared/ui/Button/buttonThemes";
+import {
+  ButtonThemes,
+  ButtonAdditions,
+} from "~/src/shared/ui/Button/buttonThemes";
 </script>
 
 <style scoped lang="scss">

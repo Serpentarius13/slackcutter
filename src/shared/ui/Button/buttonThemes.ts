@@ -8,7 +8,7 @@ export enum ButtonSizes {
   medium = "medium",
 }
 
-export enum ButtonStyles {
+export enum ButtonAdditions {
   unshadowed = "unshadowed",
   none = "none",
 }
