@@ -1,8 +1,8 @@
 <template>
   <section class="relative flex w-full max-w-[41.4rem] flex-col">
-    <h2 class="heading-big pb-[3.2rem] ">Confirm your email</h2>
+    <h2 class="heading-big pb-[3.2rem]">Confirm your email</h2>
 
-    <FeaturesAuthConfirmEmailForm />
+    <FeaturesAuthConfirmEmailForm email="something@email.ru" />
   </section>
 </template>
 

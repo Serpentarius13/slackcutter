@@ -1,6 +1,5 @@
 <template>
-  <FeaturesAuthRegistrationStart />
-
+  <WidgetsAuthRegistration />
 </template>
 
 <script setup lang="ts"></script>

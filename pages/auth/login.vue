@@ -1,7 +1,7 @@
 <template>
   <!-- <FeaturesAuthLoginForm /> -->
 
-  <FeaturesAuthPersonalInfoForm />
+  <WidgetsAuthLogin />
 </template>
 
 <script setup lang="ts"></script>

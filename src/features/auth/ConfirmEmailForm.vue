@@ -14,18 +14,16 @@
       />
     </div>
 
-    <Transition name="fade">
-      <SharedUiButton
-        :theme="ButtonThemes.purple"
-        v-if="isPossibleToSendAgain"
-        @click="handleSendSms"
-      >
-        Send again
-      </SharedUiButton>
-      <p class="text-medium text-center opacity-70" v-else>
-        Resend in {{ secondsLeft }} seconds
-      </p>
-    </Transition>
+    <SharedUiButton
+      :theme="ButtonThemes.purple"
+      v-if="isPossibleToSendAgain"
+      @click="handleSendSms"
+    >
+      Send again
+    </SharedUiButton>
+    <p class="text-medium text-center opacity-70" v-else>
+      Resend in {{ secondsLeft }} seconds
+    </p>
 
     <SharedUiAuthButton :disabled="str.length !== 4">
       Verify now

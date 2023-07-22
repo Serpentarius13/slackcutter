@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col gap-[1rem]">
     <slot />
-    <Transition name="fade"  mode="">
+    <Transition name="fade">
       <span v-if="error" class="text-bold text-[1.6rem] text-red-700">
-        {{ error === "Required" ? "Обязательное поле" : error }}
+        {{ error === "Required" ? "This field is required" : error }}
       </span>
     </Transition>
   </div>

@@ -16,7 +16,7 @@
   font-size: 62.5%;
 }
 
-:global(.page-enter-from) {
+/** :global(.page-enter-from) {
   opacity: 0;
   scale: 0;
 }
@@ -28,5 +28,5 @@
 
 :global(.page-enter-active, .page-leave-active) {
   transition: 0.5s ease all;
-}
+}**/
 </style>

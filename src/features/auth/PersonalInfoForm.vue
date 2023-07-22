@@ -31,7 +31,7 @@
           placeholder="Confirm password"
           type="password"
           v-model="confirmPassword"
-          :error="confirmError || errors.confirmPassword"
+          :error="errors.confirmPassword"
         />
       </div>
     </div>
@@ -54,23 +54,11 @@ const { handleSubmit, errors } = useForm({
   validationSchema: toTypedSchema(registerCompleteSchema),
 });
 
-const confirmError = ref<string>("");
-
 const { value: firstName } = useField("firstName");
 const { value: lastName } = useField("lastName");
 
 const { value: password } = useField("password");
 const { value: confirmPassword } = useField("confirmPassword");
-
-watch(confirmPassword, () => {
-  if (
-    confirmPassword.value &&
-    password.value &&
-    confirmPassword.value !== password.value
-  )
-    confirmError.value = "Passwords dont match";
-  else confirmError.value = "";
-});
 
 const onSubmit = handleSubmit((values) => {
   console.log(values);

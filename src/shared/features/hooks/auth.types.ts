@@ -12,20 +12,35 @@ export const registerSchema = z.object({
   email: z.string().nonempty("Enter your email").email("Enter correct email"),
 });
 
-export const registerCompleteSchema = z.object({
-  firstName: z
-    .string()
-    .nonempty("Enter your first name please")
-    .max(100, "Names should not be more than 100 symbols"),
+export const registerCompleteSchema = z
+  .object({
+    firstName: z
+      .string()
+      .nonempty("Enter your first name please")
+      .max(100, "Names should not be more than 100 symbols"),
 
-  lastName: z
-    .string()
-    .nonempty("Enter your last name please")
-    .max(100, "Names should not be more than 100 symbols"),
+    lastName: z
+      .string()
+      .nonempty("Enter your last name please")
+      .max(100, "Names should not be more than 100 symbols"),
 
-  password: passwordRegex,
-  confirmPassword: passwordRegex,
-});
+    password: passwordRegex,
+    confirmPassword: passwordRegex,
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords don't match",
+    path: ["confirmPassword"],
+  });
+
+export const passwordRestoreSchema = z
+  .object({
+    password: passwordRegex,
+    confirmPassword: passwordRegex,
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords don't match",
+    path: ["confirmPassword"],
+  });
 
 export const loginSchema = z.object({
   email: z.string().nonempty("Enter your email").email("Enter correct email"),
@@ -36,3 +51,4 @@ export const loginSchema = z.object({
 export type TLoginData = z.infer<typeof loginSchema>;
 export type TRegisterData = z.infer<typeof registerSchema>;
 export type TRegisterCompleteData = z.infer<typeof registerCompleteSchema>;
+export type TPasswordRestoreSchema = z.infer<typeof passwordRestoreSchema>;

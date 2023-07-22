@@ -23,7 +23,10 @@
       </nav>
 
       <NuxtLink to="/auth/login" v-else>
-        <NuxtIcon name="main/arrow-left" class="aspect-square w-[5.2rem] mb-[7.5rem]" />
+        <NuxtIcon
+          name="main/arrow-left"
+          class="mb-[7.5rem] aspect-square w-[5.2rem]"
+        />
       </NuxtLink>
 
       <NuxtPage />

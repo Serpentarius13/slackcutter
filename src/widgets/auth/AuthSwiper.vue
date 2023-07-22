@@ -18,9 +18,9 @@ import { Swiper } from "swiper/types";
 import { IAuthSwiperSlide } from "~/src/entities/auth/AuthSwiperSlide/auth-swiper-slide.types";
 
 const SWIPER_BLUE_COLOR =
-  "linear-gradient(0deg, rgba(0,87,255,1) 0%, rgba(0,87,255,0.3) 20%, rgba(4,7,45,1) 30%)";
+  "linear-gradient(0deg, rgba(0,87,255,1) 0%, rgba(0,87,255,0.3) 30%,  rgba(4,7,45,1) 50%)";
 const SWIPER_RED_COLOR =
-  "linear-gradient(0deg, rgba(255, 218, 0, 1) 0%,rgba(255, 218, 0, 0.3) 20%, rgba(4,7,45,1) 30%)";
+  "linear-gradient(0deg, rgba(255, 218, 0, 1) 0%,rgba(255, 218, 0, 0.3) 30%, rgba(4,7,45,1) 50%)";
 
 const isRedBackground = ref<boolean>(false);
 
