@@ -12,12 +12,7 @@
         videos in Instagram Reels, TikToks and Vines
       </h2>
 
-      <SharedUiButton
-        :theme="ButtonThemes.yellow"
-        :additions="ButtonAdditions.unshadowed"
-      >
-        Start now
-      </SharedUiButton>
+      <SharedUiButton :theme="ButtonThemes.yellow"> Start now </SharedUiButton>
     </div>
   </section>
 </template>

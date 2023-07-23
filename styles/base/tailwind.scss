@@ -3,6 +3,10 @@
     @apply mx-auto w-full max-w-[120rem] xl:max-w-[95vw];
   }
 
+  .text-smallest {
+    @apply text-[1.2rem] leading-[160%] tracking-[0.36px];
+  }
+
   .text-small {
     @apply text-[1.4rem] leading-[3.4rem] tracking-[0.48px] md:text-[1.2rem];
   }
@@ -17,6 +21,10 @@
 
   .text-bigger {
     @apply text-[2.2rem] leading-[160%] tracking-[0.66px];
+  }
+
+  .heading-small {
+    @apply font-bebas text-[3.2rem] uppercase leading-[120%];
   }
 
   .heading-big {

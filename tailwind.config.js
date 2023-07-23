@@ -17,6 +17,8 @@ module.exports = {
         bigger: "17rem",
         small: "1.8rem",
         "medium-big": "5rem",
+        smallest: "0.4rem",
+        smaller: "1.3rem",
       },
 
       colors: {
