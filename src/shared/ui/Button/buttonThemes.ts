@@ -11,4 +11,5 @@ export enum ButtonSizes {
 export enum ButtonAdditions {
   unshadowed = "unshadowed",
   none = "none",
+  unhovering = "unhovering",
 }

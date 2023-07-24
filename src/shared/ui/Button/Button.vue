@@ -1,13 +1,5 @@
 <template>
-  <button
-    :class="[
-      props.size,
-      props.theme,
-      fontSizes[size],
-      props.additions,
-      'btn transition-standard  ',
-    ]"
-  >
+  <button :class="classes">
     <slot />
   </button>
 </template>
@@ -18,18 +10,35 @@ import { ButtonSizes, ButtonAdditions, ButtonThemes } from "./buttonThemes";
 type ButtonProps = {
   size?: ButtonSizes;
   theme?: ButtonThemes;
- additions?: ButtonAdditions;
+  additions?: ButtonAdditions | ButtonAdditions[];
 };
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   size: ButtonSizes.medium,
   theme: ButtonThemes.purple,
- additions: ButtonAdditions.none,
+  additions: ButtonAdditions.none,
 });
 
 const fontSizes: Record<ButtonSizes, string> = {
   medium: "text-medium",
 };
+
+const classes = computed(() => {
+  const classesArr = [
+    props.size,
+    props.theme,
+    fontSizes[props.size],
+    props.additions,
+    "btn transition-standard",
+  ];
+
+  if (typeof props.additions === "string") {
+    classesArr.push(props.additions);
+  } else {
+    props.additions.forEach((v) => classesArr.push(v));
+  }
+  return classesArr;
+});
 </script>
 
 <style scoped lang="scss">
@@ -68,6 +77,18 @@ const fontSizes: Record<ButtonSizes, string> = {
       &:hover {
         box-shadow: none !important;
         @apply border-2 border-yellow bg-transparent;
+      }
+    }
+
+    &.unhovering {
+      &:hover {
+        box-shadow: none !important;
+        background: radial-gradient(
+            42.56% 215.72% at 92.43% 82.5%,
+            rgba(255, 255, 255, 0.2) 0%,
+            rgba(0, 0, 0, 0) 100%
+          )
+          #ffda00;
       }
     }
   }

@@ -1,9 +1,9 @@
 <template>
   <figure
-    class="grid h-[17.3rem] grid-cols-2 justify-start gap-[3.2rem] rounded-medium border-[1px] border-white border-opacity-70 bg-white bg-opacity-[8%] p-[1.8rem] backdrop-blur-[8.2rem]"
+    class="grid h-[17.3rem] grid-cols-2 items-stretch justify-start gap-[3.2rem] rounded-medium border-[1px] border-white border-opacity-70 bg-white bg-opacity-[8%] p-[1.8rem] backdrop-blur-[8.2rem]"
   >
     <NuxtImg
-      class="h-full w-full object-cover rounded-smaller"
+      class="max-h-[13.7rem] w-full rounded-smaller object-cover"
       :src="project.img"
       :alt="`Preview of project ${project.title}`"
     />
@@ -14,14 +14,15 @@
       </h4>
 
       <span
-        class="text-smallest rounded-smallest bg-white bg-opacity-[6%] px-[0.6rem] py-[1.2rem] text-yellow mix-blend-luminosity"
+        class="text-smallest rounded-smallest bg-white bg-opacity-[6%] pxy-[0.6rem] px-[1.2rem] text-yellow mix-blend-luminosity w-fit"
       >
         {{ project.duration }}
       </span>
 
       <p class="text-smallest text-white">
-        <span class="text-opacity-40"> Last update: </span>
-        <span class="text-opacity-70"> {{ project.lastUpdate }} </span>
+        <span class="opacity-[40%]"> Last update: </span>
+        <br />
+        <span class="opacity-[70%]"> {{ project.lastUpdate }} </span>
       </p>
     </div>
   </figure>
