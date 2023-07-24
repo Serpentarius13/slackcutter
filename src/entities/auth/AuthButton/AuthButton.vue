@@ -9,7 +9,10 @@
 </template>
 
 <script setup lang="ts">
-import { ButtonAdditions, ButtonThemes } from "../Button/buttonThemes";
+import {
+  ButtonAdditions,
+  ButtonThemes,
+} from "~/src/shared/ui/Button/buttonThemes";
 </script>
 
 <style scoped lang="scss"></style>

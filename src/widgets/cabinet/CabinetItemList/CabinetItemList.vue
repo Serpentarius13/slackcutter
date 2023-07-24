@@ -1,9 +1,9 @@
 <template>
-  <section class="flex flex-col gap-[3.6rem]">
+  <section class="flex flex-col gap-[3.6rem] group">
     <h2 class="heading-medium text-white">
       {{ title }}
 
-      <span class="opacity-30 transition-all hover:opacity-100">
+      <span class="opacity-30 transition-all group-hover:opacity-100">
         &#40;{{ cardList.items.length }}&#41;
       </span>
     </h2>

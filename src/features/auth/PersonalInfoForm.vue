@@ -1,5 +1,5 @@
 <template>
-  <SharedUiAuthFormSkeleton @submit.prevent="onSubmit" class="items-center">
+  <EntitiesAuthFormSkeleton @submit.prevent="onSubmit" class="items-center">
     <div class="w-full">
       <h3 class="text-medium pb-[1rem]">Personal Info</h3>
       <div class="flex w-full flex-col gap-[1rem]">
@@ -43,8 +43,8 @@
       Forgot Password?
     </NuxtLink>
 
-    <SharedUiAuthButton> Sign In </SharedUiAuthButton>
-  </SharedUiAuthFormSkeleton>
+    <EntitiesAuthAuthButton> Sign In </EntitiesAuthAuthButton>
+  </EntitiesAuthFormSkeleton>
 </template>
 
 <script setup lang="ts">

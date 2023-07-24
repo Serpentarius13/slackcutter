@@ -1,5 +1,5 @@
 <template>
-
+  <WidgetsCabinetModalInitModal />
 </template>
 
 <script setup lang="ts"></script>

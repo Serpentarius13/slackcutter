@@ -1,6 +1,6 @@
 <template>
   <figure
-    class="group grid min-h-[27rem] grid-cols-2 justify-start gap-[3.2rem] rounded-medium border-[1px] border-white border-opacity-70 bg-white bg-opacity-[8%] p-[1.8rem] backdrop-blur-[8.2rem]"
+    class="group/card grid min-h-[27rem] grid-cols-2 justify-start gap-[3.2rem] rounded-medium border-[1px] border-white border-opacity-70 bg-white bg-opacity-[8%] p-[1.8rem] backdrop-blur-[8.2rem]"
   >
     <NuxtImg
       class="bordered h-full max-h-[23.4rem] w-full rounded-smaller object-cover"
@@ -17,16 +17,11 @@
         {{ template.text }}
       </p>
 
-      <SharedUiButton
-        :additions="[ButtonAdditions.unshadowed, ButtonAdditions.unhovering]"
-        :theme="ButtonThemes.yellow"
-        class="!w-full pl-[3.1rem] pr-[1.5rem] opacity-0 transition-all group-hover:opacity-100"
+      <EntitiesCabinetCreateProjectBtn
+        class="opacity-0 group-hover/card:opacity-100"
       >
-        <div class="flex w-full items-center justify-between">
-          <span class="font-bold"> Use for New Template </span>
-          <NuxtIcon name="main/plus" class="aspect-square w-[2.8rem]" />
-        </div>
-      </SharedUiButton>
+        Use for New project
+      </EntitiesCabinetCreateProjectBtn>
     </div>
   </figure>
 </template>

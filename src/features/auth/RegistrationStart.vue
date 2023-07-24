@@ -1,17 +1,17 @@
 <template>
-  <SharedUiAuthFormSkeleton @submit.prevent="onSubmit">
+  <EntitiesAuthFormSkeleton @submit.prevent="onSubmit">
     <SharedUiInputText
       placeholder="Your email"
       v-model="email"
       :error="errors.email"
     />
 
-    <SharedUiAuthButton> Create account</SharedUiAuthButton>
+    <EntitiesAuthAuthButton> Create account </EntitiesAuthAuthButton>
     <p class="text-small w-full text-center text-black opacity-[40%]">
       By registering, you confirm that you have read and agreed to the Terms of
       Policy
     </p>
-  </SharedUiAuthFormSkeleton>
+  </EntitiesAuthFormSkeleton>
 </template>
 
 <script setup lang="ts">

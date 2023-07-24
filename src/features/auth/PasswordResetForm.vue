@@ -1,5 +1,5 @@
 <template>
-  <SharedUiAuthFormSkeleton @submit.prevent="onSubmit" class="items-center">
+  <EntitiesAuthFormSkeleton @submit.prevent="onSubmit" class="items-center">
     <div class="flex w-full flex-col gap-[2.2rem]">
       <SharedUiInputText
         placeholder="New password"
@@ -15,8 +15,8 @@
       />
     </div>
 
-    <SharedUiAuthButton> Confirm </SharedUiAuthButton>
-  </SharedUiAuthFormSkeleton>
+    <EntitiesAuthAuthButton> Confirm </EntitiesAuthAuthButton>
+  </EntitiesAuthFormSkeleton>
 </template>
 
 <script setup lang="ts">

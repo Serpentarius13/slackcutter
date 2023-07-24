@@ -4,7 +4,7 @@
 
     <ul class="flex items-center gap-[1.2rem]">
       <li v-for="btn in socialButtons" :key="btn.icon">
-        <SharedUiAuthProviderButton
+        <EntitiesAuthAuthProviderButton
           :icon="btn.icon"
           :class="[btn.color]"
           @click="$emit(btn.name)"

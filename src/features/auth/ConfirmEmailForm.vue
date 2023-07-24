@@ -25,9 +25,9 @@
       Resend in {{ secondsLeft }} seconds
     </p>
 
-    <SharedUiAuthButton :disabled="str.length !== 4">
+    <EntitiesAuthAuthButton :disabled="str.length !== 4">
       Verify now
-    </SharedUiAuthButton>
+    </EntitiesAuthAuthButton>
   </form>
 </template>
 
