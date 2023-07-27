@@ -1,19 +1,19 @@
 <template>
-  <EntitiesAuthFormSkeleton @submit.prevent="onSubmit" class="items-center">
+  <EntitiesAuthFormSkeleton class="items-center" @submit.prevent="onSubmit">
     <div class="w-full">
       <h3 class="text-medium pb-[1rem]">Personal Info</h3>
       <div class="flex w-full flex-col gap-[1rem]">
         <SharedUiInputText
-          placeholder="First Name"
           v-model="firstName"
           :error="errors.firstName"
+          placeholder="First Name"
         />
 
         <SharedUiInputText
-          placeholder="Last Name"
-          type="password"
           v-model="lastName"
           :error="errors.lastName"
+          placeholder="Last Name"
+          type="password"
         />
       </div>
     </div>
@@ -22,33 +22,36 @@
       <h3 class="text-medium pb-[2.9rem]">Security</h3>
       <div class="flex w-full flex-col gap-[2.2rem]">
         <SharedUiInputText
-          placeholder="Password"
           v-model="password"
           :error="errors.password"
+          placeholder="Password"
         />
 
         <SharedUiInputText
-          placeholder="Confirm password"
-          type="password"
           v-model="confirmPassword"
           :error="errors.confirmPassword"
+          placeholder="Confirm password"
+          type="password"
         />
       </div>
     </div>
 
     <NuxtLink
-      to="/auth/restore"
       class="text-small cursor-pointer text-black underline opacity-50 hover:opacity-100"
+      to="/auth/restore"
     >
       Forgot Password?
     </NuxtLink>
 
-    <EntitiesAuthAuthButton> Sign In </EntitiesAuthAuthButton>
+    <EntitiesAuthAuthButton> Sign In</EntitiesAuthAuthButton>
   </EntitiesAuthFormSkeleton>
 </template>
 
-<script setup lang="ts">
-import { registerCompleteSchema } from "~/src/shared/features/hooks/auth.types";
+<script lang="ts" setup>
+import {
+  registerCompleteSchema,
+  TRegisterCompleteData,
+} from "~/src/features/auth/types/auth.types";
 
 const { handleSubmit, errors } = useForm({
   validationSchema: toTypedSchema(registerCompleteSchema),
@@ -60,9 +63,11 @@ const { value: lastName } = useField("lastName");
 const { value: password } = useField("password");
 const { value: confirmPassword } = useField("confirmPassword");
 
+const emit = defineEmits<{ data: [loginData: TRegisterCompleteData] }>();
+
 const onSubmit = handleSubmit((values) => {
-  console.log(values);
+  emit("data", values);
 });
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

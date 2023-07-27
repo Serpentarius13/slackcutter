@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { passwordRestoreSchema } from "~/src/shared/features/hooks/auth.types";
+import { passwordRestoreSchema } from "~/src/features/auth/types/auth.types";
 
 const { handleSubmit, errors } = useForm({
   validationSchema: toTypedSchema(passwordRestoreSchema),

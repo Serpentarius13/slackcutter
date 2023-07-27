@@ -48,6 +48,23 @@ export const loginSchema = z.object({
   password: z.string().nonempty("Enter your password"),
 });
 
+export interface IUser {
+    id: number;
+    first_name: string;
+    last_name: string;
+    email: string;
+    role: string;
+    verified: boolean;
+    created: string
+}
+
+
+
+export type TConfirmationCodeData = {
+    code: string;
+    email: string
+}
+
 export type TLoginData = z.infer<typeof loginSchema>;
 export type TRegisterData = z.infer<typeof registerSchema>;
 export type TRegisterCompleteData = z.infer<typeof registerCompleteSchema>;

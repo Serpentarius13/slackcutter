@@ -1,7 +1,7 @@
 <template>
   <form
     class="flex w-full max-w-[34.9rem] flex-col items-center gap-[5.7rem]"
-    @submit.prevent="$emit('sendSms')"
+    @submit.prevent="handleComplete"
   >
     <p class="text-medium text-center opacity-70">
       Enter the code we sent to the {{ email || "placeholderemail@mail.ru" }}
@@ -15,13 +15,13 @@
     </div>
 
     <SharedUiButton
-      :theme="ButtonThemes.purple"
       v-if="isPossibleToSendAgain"
+      :theme="ButtonThemes.purple"
       @click="handleSendSms"
     >
       Send again
     </SharedUiButton>
-    <p class="text-medium text-center opacity-70" v-else>
+    <p v-else class="text-medium text-center opacity-70">
       Resend in {{ secondsLeft }} seconds
     </p>
 
@@ -31,7 +31,7 @@
   </form>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { isDigit } from "~/src/shared/features/utils/isDigit";
 import { ButtonThemes } from "~/src/shared/ui/Button/buttonThemes";
 
@@ -52,6 +52,7 @@ const isPossibleToSendAgain = computed<boolean>(() => !intervalRef.value);
 
 const emit = defineEmits<{
   complete: [info: { code: string; email: string }];
+  sendSms: [];
 }>();
 
 const handleAddStr = (unparsed: string) => {
@@ -92,7 +93,7 @@ function initCountDown() {
 
 function handleSendSms() {
   if (isPossibleToSendAgain.value) {
-    console.log("sent sms");
+    emit("sendSms");
     initCountDown();
   }
 }
@@ -116,4 +117,4 @@ onUnmounted(() => {
 });
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>
