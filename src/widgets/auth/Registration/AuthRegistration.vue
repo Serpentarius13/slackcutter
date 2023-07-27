@@ -31,6 +31,8 @@ import {
 } from "~/src/features/auth/types/auth.types";
 import { useUserStore } from "~/stores/useUserStore";
 
+import { useToast } from "vue-toastification/dist/index.mjs";
+
 const { step, incStep } = useSteps();
 
 const email = ref<string>("");
@@ -67,6 +69,11 @@ const handleRegisterComplete = (data: TRegisterCompleteData) => {
     router.push("/cabinet");
   });
 };
+
+onMounted(() => {
+  const toast = useToast();
+  toast.success("ss");
+});
 </script>
 
 <style lang="scss" scoped></style>

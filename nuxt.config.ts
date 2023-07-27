@@ -19,7 +19,9 @@ export default defineNuxtConfig({
     },
   },
 
-  build: {},
+  build: {
+    transpile: ["vue-toastification"],
+  },
   vite: {
     vue: {
       script: {

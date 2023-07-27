@@ -4,10 +4,12 @@
     <NuxtPage />
   </NuxtLayout>
 
-  <ClientOnly> <WidgetsOtherModalWindow /> <WidgetsToaster /> </ClientOnly>
+  <ClientOnly>
+    <WidgetsOtherModalWindow />
+  </ClientOnly>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import AOS from "aos";
 
 onMounted(() => {
