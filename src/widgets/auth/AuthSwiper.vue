@@ -19,6 +19,7 @@
       :alt="leftImgStore?.image.imgAlt"
       :src="leftImgStore?.image.imgSource"
       class="w-full h-full object-contain transition-all"
+      preload
     />
   </EntitiesAuthAuthLeftScreen>
 </template>

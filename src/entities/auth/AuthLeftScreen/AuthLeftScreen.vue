@@ -5,7 +5,9 @@
     }"
     class="relative flex h-screen max-h-screen items-center justify-center overflow-hidden bg-darkest-blue transition-all"
   >
-    <SharedUiLogo class="absolute left-[3.8rem] top-[3.2rem] aspect-square w-[7.8rem] z-[502]" />
+    <NuxtLink to="/">
+      <SharedUiLogo class="absolute left-[3.8rem] top-[3.2rem] aspect-square w-[7.8rem] z-[502]" />
+    </NuxtLink>
 
     <slot />
   </div>
