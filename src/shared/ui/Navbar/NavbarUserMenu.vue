@@ -9,7 +9,9 @@
       />
     </a>
 
-    <span class="text-small text-white overflow-ellipsis">
+    <span
+      class="text-small text-white overflow-ellipsis max-w-[50%] overflow-hidden whitespace-nowrap block"
+    >
       {{ `${user.first_name} ${user.last_name}` }}
     </span>
 
