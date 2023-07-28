@@ -1,7 +1,7 @@
 <template>
   <EntitiesAuthAuthLeftScreen
     :gradient-color="isRedBackground ? SWIPER_RED_COLOR : SWIPER_BLUE_COLOR"
-    class="w-[90rem] max-w-[50vw] md:hidden"
+    class="min-w-[72rem] max-w-[50vw] md:hidden"
   >
     <SharedUiSwiper
       v-if="!leftImgStore.hasImage"
@@ -14,13 +14,16 @@
       <EntitiesAuthAuthSwiperSlide v-bind="slide" />
     </SharedUiSwiper>
 
-    <NuxtImg
-      v-else
-      :alt="leftImgStore?.image.imgAlt"
-      :src="leftImgStore?.image.imgSource"
-      class="w-full h-full object-contain transition-all"
-      preload
-    />
+    <Transition mode="out-in" name="fade">
+      <NuxtImg
+        v-if="leftImgStore.hasImage"
+        :key="leftImgStore.image?.imgAlt"
+        :alt="leftImgStore.image?.imgAlt"
+        :src="leftImgStore.image?.imgSource"
+        class="w-full h-full object-contain transition-all"
+        preload
+      />
+    </Transition>
   </EntitiesAuthAuthLeftScreen>
 </template>
 

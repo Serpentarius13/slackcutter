@@ -1,17 +1,13 @@
 <template>
   <form
-    class="flex w-full max-w-[34.9rem] flex-col items-center gap-[5.7rem]"
+    class="flex w-full w-full flex-col items-center gap-[5.7rem]"
     @submit.prevent="handleComplete"
   >
-    <p class="text-medium text-center opacity-70">
+    <p class="text-medium text-center opacity-70 max-w-[31rem]">
       Enter the code we sent to the {{ email || "placeholderemail@mail.ru" }}
     </p>
     <div class="flex items-center justify-center gap-[1.9rem]">
-      <SharedUiInputDigitCell
-        v-for="i in 4"
-        :key="i"
-        :digit="getDigitByIndex(i - 1)"
-      />
+      <SharedUiInputDigitCell v-for="i in 4" :key="i" :digit="getDigitByIndex(i - 1)" />
     </div>
 
     <SharedUiButton
@@ -21,13 +17,9 @@
     >
       Send again
     </SharedUiButton>
-    <p v-else class="text-medium text-center opacity-70">
-      Resend in {{ secondsLeft }} seconds
-    </p>
+    <p v-else class="text-medium text-center opacity-70">Resend in {{ secondsLeft }} seconds</p>
 
-    <EntitiesAuthAuthButton :disabled="str.length !== 4">
-      Verify now
-    </EntitiesAuthAuthButton>
+    <EntitiesAuthAuthButton :disabled="str.length !== 4"> Verify now</EntitiesAuthAuthButton>
   </form>
 </template>
 
