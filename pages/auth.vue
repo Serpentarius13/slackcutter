@@ -1,7 +1,9 @@
 <template>
   <WidgetsAuthSwiper />
 
-  <section class="flex h-full w-full items-center justify-center bg-white flex-1 transition-all">
+  <section
+    class="flex h-full w-full items-center justify-center bg-white flex-1 transition-all px-[3rem]"
+  >
     <div class="flex flex-col gap-[5.7rem] max-w-[41.4rem] w-full">
       <nav
         v-if="$route.path === '/auth/login' || $route.path === '/auth/register'"

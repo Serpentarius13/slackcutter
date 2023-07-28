@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     public: {
       apiBase: process.env.API_URL,
       baseUrl: process.env.BASE_URL,
+      googleAuthToken: process.env.GOOGLE_AUTH_TOKEN,
     },
   },
 
