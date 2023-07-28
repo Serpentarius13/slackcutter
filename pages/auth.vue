@@ -26,7 +26,13 @@
 </template>
 
 <script lang="ts" setup>
+import { authLeftImages } from "~/src/entities/auth/auth-left-images.consts";
+
 definePageMeta({ layout: "auth", middleware: "requires-guest" });
+
+onMounted(() => {
+  Object.values(authLeftImages).forEach((img) => preloadImage(img));
+});
 </script>
 
 <style lang="scss"></style>
