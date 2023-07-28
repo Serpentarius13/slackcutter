@@ -27,6 +27,7 @@
 
 <script lang="ts" setup>
 import { authLeftImages } from "~/src/entities/auth/auth-left-images.consts";
+import { preloadImage } from "~/src/shared/features/utils/preloadImage";
 
 definePageMeta({ layout: "auth", middleware: "requires-guest" });
 
