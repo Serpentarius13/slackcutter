@@ -1,17 +1,13 @@
 <template>
-  <button
-    class="flex aspect-square w-[5.6rem] items-center justify-center rounded-full"
-  >
-    <NuxtIcon :name="icon" />
+  <button class="flex aspect-square w-[5.6rem] items-center justify-center rounded-full">
+    <NuxtImg :alt="imgAlt" :src="imgSource" class="w-[3.8rem] aspect-square" />
   </button>
 </template>
 
-<script setup lang="ts">
-interface IAuthProviderButton {
-  icon: string;
-}
+<script lang="ts" setup>
+import { IImage } from "~/src/shared/features/types/shared.types";
 
-defineProps<IAuthProviderButton>();
+defineProps<IImage>();
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

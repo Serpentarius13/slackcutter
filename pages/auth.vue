@@ -1,41 +1,32 @@
 <template>
   <WidgetsAuthSwiper />
 
-  <section class="flex h-full w-full items-center justify-center bg-white">
-    <div class="flex flex-col gap-[5.7rem]">
+  <section class="flex h-full w-full items-center justify-center bg-white flex-1 transition-all">
+    <div class="flex flex-col gap-[5.7rem] max-w-[41.4rem] w-full">
       <nav
         v-if="$route.path === '/auth/login' || $route.path === '/auth/register'"
-        class="grid max-w-[41.4rem] grid-cols-2 items-center gap-[1rem] px-[1rem] py-[0.8rem]"
+        class="flex max-w-full items-center gap-[1rem] px-[1rem] py-[0.8rem]"
       >
-        <SharedUiTabLink
-          to="/auth/login"
-          :activated="$route.path === '/auth/login'"
-        >
-          Sign In</SharedUiTabLink
-        >
+        <SharedUiTabLink :activated="$route.path === '/auth/login'" to="/auth/login">
+          Sign In
+        </SharedUiTabLink>
 
-        <SharedUiTabLink
-          to="/auth/register"
-          :activated="$route.path === '/auth/register'"
-        >
-          Sign Up</SharedUiTabLink
-        >
+        <SharedUiTabLink :activated="$route.path === '/auth/register'" to="/auth/register">
+          Sign Up
+        </SharedUiTabLink>
       </nav>
 
-      <NuxtLink to="/auth/login" v-else>
-        <NuxtIcon
-          name="main/arrow-left"
-          class="mb-[7.5rem] aspect-square w-[5.2rem]"
-        />
-      </NuxtLink>
+      <button v-else @click="$router.go(-1)">
+        <NuxtIcon class="mb-[7.5rem] aspect-square w-[5.2rem]" name="main/arrow-left" />
+      </button>
 
       <NuxtPage />
     </div>
   </section>
 </template>
 
-<script setup lang="ts">
-definePageMeta({ layout: "auth" });
+<script lang="ts" setup>
+definePageMeta({ layout: "auth", middleware: "requires-guest" });
 </script>
 
 <style lang="scss"></style>

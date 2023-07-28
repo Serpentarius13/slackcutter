@@ -1,19 +1,17 @@
 <template>
   <div
-    class="auth-left-screen relative flex h-screen max-h-screen w-full items-center justify-center overflow-hidden bg-darkest-blue transition-all"
     :style="{
       background: gradientColor,
     }"
+    class="relative flex h-screen max-h-screen items-center justify-center overflow-hidden bg-darkest-blue transition-all"
   >
-    <SharedUiLogo
-      class="absolute left-[3.8rem] top-[3.2rem] z-[10] aspect-square w-[7.8rem]"
-    />
+    <SharedUiLogo class="absolute left-[3.8rem] top-[3.2rem] aspect-square w-[7.8rem] z-[502]" />
 
     <slot />
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 interface IAuthLeftScreen {
   gradientColor?: string;
   atBottom?: boolean;
@@ -22,4 +20,4 @@ interface IAuthLeftScreen {
 withDefaults(defineProps<IAuthLeftScreen>(), { gradientColor: "#0057ff" });
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

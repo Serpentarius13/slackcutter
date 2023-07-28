@@ -1,13 +1,7 @@
 <template>
-  <div class="h-full w-full">
-    <article
-      class="absolute bottom-[17.7rem] left-1/2 flex -translate-x-1/2 flex-col items-center justify-center"
-    >
-      <img
-        class="max-h-[60rem] w-full object-contain"
-        :src="imgSource"
-        :alt="imgAlt"
-      />
+  <div class="h-full w-full grid place-items-center">
+    <article class="flex flex-col items-center justify-center">
+      <NuxtImg :alt="imgAlt" :src="imgSource" class="max-h-[60rem] w-full object-contain" />
       <h2
         class="heading-big mb-[5.7rem] mt-[4.22rem] max-w-[40rem] text-center uppercase text-white"
       >
@@ -23,10 +17,10 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { IAuthSwiperSlide } from "./auth-swiper-slide.types";
 
 defineProps<IAuthSwiperSlide>();
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

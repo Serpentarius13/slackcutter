@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from "axios";
-import useToastStore from "~/stores/useToastStore";
+import { useToast } from "vue-toastification/dist/index.mjs";
 
 export function makeAxiosInstance(): AxiosInstance {
   const config = useRuntimeConfig();
@@ -11,19 +11,16 @@ export function makeAxiosInstance(): AxiosInstance {
 
   instance.interceptors.response.use(
     (resp) => {
-      if (resp.status === 400 || resp.status === 500)
-        return Promise.reject("There was an error");
+      if (resp.status === 400 || resp.status === 500) return Promise.reject("There was an error");
       else return resp;
     },
     (error) => {
-      const toast = useToastStore();
+      const toast = useToast();
 
-      error.response.data.message.forEach((m: string) =>
-        toast.error({ text: m })
-      );
+      Object.values(error.response.data).forEach((e) => toast.error(e));
 
       return Promise.reject(error);
-    }
+    },
   );
 
   return instance;

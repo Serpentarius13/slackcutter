@@ -1,18 +1,12 @@
 import { makeAxiosInstance } from "~/api/axios";
-import {
-  IUser,
-  TConfirmationCodeData,
-  TLoginData,
-  TRegisterCompleteData,
-  TRegisterData,
-} from "../types/auth.types";
+import { IUser, TConfirmationCodeData, TLoginData, TRegisterData } from "../types/auth.types";
 
 type TAuthResponse = {
   access_token: string;
   refresh_token: string;
 };
 
-type TPasswordRestoreDTO = {
+export type TPasswordRestoreDTO = {
   new_password: string;
 } & TConfirmationCodeData;
 
@@ -24,10 +18,7 @@ export function useAuth() {
    * @param data
    */
   async function apiLogin(data: TLoginData): Promise<TAuthResponse> {
-    const { data: tokens } = await instance.post<TAuthResponse>(
-      "/api/auth/login",
-      data
-    );
+    const { data: tokens } = await instance.post<TAuthResponse>("/api/auth/login", data);
 
     return tokens;
   }
@@ -50,7 +41,7 @@ export function useAuth() {
    * @param token
    */
   async function apiLogout(token: string) {
-    await instance.post("/api/auth/logout", {
+    await instance.post("/api/auth/logout", null, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -74,13 +65,8 @@ export function useAuth() {
    * Complete registration
    * @param data
    */
-  async function apiCompleteRegister(
-    data: TRegisterCompleteData
-  ): Promise<TAuthResponse> {
-    const { data: tokens } = await instance.post<TAuthResponse>(
-      "/api/auth/setup",
-      data
-    );
+  async function apiCompleteRegister(data: TRegisterCompleteDTO): Promise<TAuthResponse> {
+    const { data: tokens } = await instance.post<TAuthResponse>("/api/auth/setup", data);
 
     return tokens;
   }
@@ -99,13 +85,8 @@ export function useAuth() {
    * Send confirmation code for password restore
    * @param data
    */
-  async function apiSendConfirmationCodeForPasswordRestoring(
-    data: TConfirmationCodeData
-  ) {
-    await instance.post<{ msg: string }>(
-      "/api/auth/passcode_verification",
-      data
-    );
+  async function apiSendConfirmationCodeForPasswordRestoring(data: TConfirmationCodeData) {
+    await instance.post<{ msg: string }>("/api/auth/passcode_verification", data);
 
     return true;
   }
@@ -124,14 +105,10 @@ export function useAuth() {
    * Refresh tokens with token
    * @param token
    */
-  async function apiRefreshTokens(
-    refreshToken: string
-  ): Promise<TAuthResponse> {
-    const { data: tokens } = await instance.post<TAuthResponse>(
-      "/api/auth/refresh",
-
-      { headers: { Authorization: `Bearer ${refreshToken}` } }
-    );
+  async function apiRefreshTokens(refreshToken: string): Promise<TAuthResponse> {
+    const { data: tokens } = await instance.post<TAuthResponse>("/api/auth/refresh", null, {
+      headers: { Authorization: `Bearer ${refreshToken}` },
+    });
 
     return tokens;
   }

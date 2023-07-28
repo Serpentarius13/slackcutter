@@ -5,8 +5,9 @@
     <ul class="flex items-center gap-[1.2rem]">
       <li v-for="btn in socialButtons" :key="btn.icon">
         <EntitiesAuthAuthProviderButton
-          :icon="btn.icon"
           :class="[btn.color]"
+          :img-alt="btn.imgAlt"
+          :img-source="btn.imgSource"
           @click="$emit(btn.name)"
         />
       </li>
@@ -14,28 +15,33 @@
   </div>
 </template>
 
-<script setup lang="ts">
-interface IAuthSocialButton {
-  icon: string;
+<script lang="ts" setup>
+import { IImage } from "~/src/shared/features/types/shared.types";
+
+interface IAuthSocialButton extends IImage {
   color: string;
   name: string;
 }
 
 const socialButtons: IAuthSocialButton[] = [
   {
-    icon: "google",
+    imgSource: "/icons/social/google.svg",
+    imgAlt: "Google icon",
     color: "bg-dark-purple",
     name: "google",
   },
 
   {
-    icon: "facebook",
+    imgSource: "/icons/social/facebook.svg",
+    imgAlt: "Facebook icon",
     color: "bg-dark-blue",
     name: "facebook",
   },
 
   {
-    icon: "apple",
+    imgSource: "/icons/social/apple.svg",
+    imgAlt: "Apple icon",
+
     color: "bg-black",
     name: "apple",
   },
@@ -44,4 +50,4 @@ const socialButtons: IAuthSocialButton[] = [
 const emit = defineEmits(["apple", "google", "facebook"]);
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

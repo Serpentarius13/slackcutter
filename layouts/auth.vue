@@ -1,12 +1,12 @@
 <template>
-  <main class="grid h-screen w-screen grid-cols-2">
+  <main class="flex h-screen w-screen">
     <slot />
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts" setup></script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 :global(body) {
   background: #04072d;
   @apply text-black;

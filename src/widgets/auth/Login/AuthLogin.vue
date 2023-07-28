@@ -1,5 +1,5 @@
 <template>
-  <section class="relative flex flex-col items-center">
+  <section class="relative flex flex-col items-center w-full">
     <FeaturesAuthLoginForm class="mb-[5.7rem]" @data="handleLoginComplete" />
 
     <EntitiesAuthAuthSocialButtons />

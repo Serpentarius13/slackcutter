@@ -1,26 +1,30 @@
 <template>
-  <EntitiesAuthFormSkeleton @submit.prevent="onSubmit" class="items-center">
+  <EntitiesAuthFormSkeleton class="items-center" @submit.prevent="onSubmit">
     <div class="flex w-full flex-col gap-[2.2rem]">
       <SharedUiInputText
-        placeholder="New password"
-        type="password"
         v-model="password"
         :error="errors.password"
+        placeholder="New password"
+        type="password"
       />
 
       <SharedUiInputText
-        placeholder="Confirm password"
         v-model="confirmPassword"
         :error="errors.confirmPassword"
+        placeholder="Confirm password"
+        type="password"
       />
     </div>
 
-    <EntitiesAuthAuthButton> Confirm </EntitiesAuthAuthButton>
+    <EntitiesAuthAuthButton> Confirm</EntitiesAuthAuthButton>
   </EntitiesAuthFormSkeleton>
 </template>
 
-<script setup lang="ts">
-import { passwordRestoreSchema } from "~/src/features/auth/types/auth.types";
+<script lang="ts" setup>
+import {
+  passwordRestoreSchema,
+  TPasswordRestoreSchema,
+} from "~/src/features/auth/types/auth.types";
 
 const { handleSubmit, errors } = useForm({
   validationSchema: toTypedSchema(passwordRestoreSchema),
@@ -29,9 +33,11 @@ const { handleSubmit, errors } = useForm({
 const { value: password } = useField("password");
 const { value: confirmPassword } = useField("confirmPassword");
 
+const emit = defineEmits<{ data: [loginData: TPasswordRestoreSchema] }>();
+
 const onSubmit = handleSubmit((values) => {
-  console.log(values);
+  emit("data", values);
 });
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

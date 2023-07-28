@@ -4,8 +4,8 @@
   </button>
 </template>
 
-<script setup lang="ts">
-import { ButtonSizes, ButtonAdditions, ButtonThemes } from "./buttonThemes";
+<script lang="ts" setup>
+import { ButtonAdditions, ButtonSizes, ButtonThemes } from "./buttonThemes";
 
 type ButtonProps = {
   size?: ButtonSizes;
@@ -41,7 +41,7 @@ const classes = computed(() => {
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .btn {
   @apply flex w-fit items-center justify-center border-2 border-solid border-transparent outline-none;
 
@@ -90,6 +90,14 @@ const classes = computed(() => {
           )
           #ffda00;
       }
+    }
+  }
+
+  &.white {
+    @apply bg-white text-black hover:text-white hover:bg-transparent border-[1px] border-transparent hover:border-white;
+
+    &.unhovering {
+      @apply hover:bg-white hover:text-black;
     }
   }
 

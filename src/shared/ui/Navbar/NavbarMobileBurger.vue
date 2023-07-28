@@ -1,6 +1,6 @@
 <template>
   <label class="input" v-bind="$attrs">
-    <input type="checkbox" v-model="isMenuShowing" />
+    <input v-model="isMenuShowing" type="checkbox" />
 
     <span class="input__first" />
 
@@ -10,27 +10,33 @@
   <Teleport to="body">
     <Transition name="slide">
       <div
+        v-if="isMenuShowing"
         class="fixed left-0 top-0 flex h-full w-full flex-col items-center justify-center gap-[2.4rem] bg-darkest-blue z-[400] overflow-x-hidden"
         role="dialog"
-        v-if="isMenuShowing"
         @click.self="closeMenu"
       >
-        <SharedUiNavbarLinks />
+        <SharedUiNavbarLinks :is-auth="isAuth" />
 
         <button class="absolute right-[2rem] top-[2rem]" @click="closeMenu">
-          <NuxtIcon name="main/cross" class="aspect-square w-[4rem]" />
-        </button></div
-    ></Transition>
+          <NuxtIcon class="aspect-square w-[4rem]" name="main/cross" />
+        </button>
+      </div>
+    </Transition>
   </Teleport>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
+interface INavbarMobileBurger {
+  isAuth: boolean;
+}
+
+defineProps<INavbarMobileBurger>();
 const isMenuShowing = ref<boolean>(false);
 
 const closeMenu = () => (isMenuShowing.value = false);
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .slide-enter-from {
   transform: translateX(100%);
 }

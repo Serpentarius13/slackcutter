@@ -2,6 +2,14 @@
   <WidgetsAuthRegistration />
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts" setup>
+import { useLeftImage } from "~/stores/useLeftImage";
 
-<style scoped lang="scss"></style>
+const leftImgStore = useLeftImage();
+
+onMounted(() => {
+  leftImgStore.resetImage();
+});
+</script>
+
+<style lang="scss" scoped></style>

@@ -13,7 +13,6 @@
           v-model="lastName"
           :error="errors.lastName"
           placeholder="Last Name"
-          type="password"
         />
       </div>
     </div>
@@ -25,6 +24,7 @@
           v-model="password"
           :error="errors.password"
           placeholder="Password"
+          type="password"
         />
 
         <SharedUiInputText

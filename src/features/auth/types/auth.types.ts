@@ -49,21 +49,26 @@ export const loginSchema = z.object({
 });
 
 export interface IUser {
-    id: number;
-    first_name: string;
-    last_name: string;
-    email: string;
-    role: string;
-    verified: boolean;
-    created: string
+  id: number;
+  first_name: string;
+  last_name: string;
+  email: string;
+  role: string;
+  verified: boolean;
+  created: string;
 }
-
-
 
 export type TConfirmationCodeData = {
-    code: string;
-    email: string
-}
+  code: string;
+  email: string;
+};
+
+export type TRegisterCompleteDTO = {
+  email: string;
+  first_name: string;
+  last_name: string;
+  password: string;
+};
 
 export type TLoginData = z.infer<typeof loginSchema>;
 export type TRegisterData = z.infer<typeof registerSchema>;

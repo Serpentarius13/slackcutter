@@ -9,5 +9,5 @@ export default defineNuxtRouteMiddleware(async (request) => {
     await store.loginWithToken();
   }
 
-  if (store.user) return navigateTo("/profile");
+  if (store.user) return navigateTo("/cabinet");
 });

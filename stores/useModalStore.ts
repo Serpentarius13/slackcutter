@@ -5,6 +5,8 @@ import { extend } from "@vue/shared";
 import { lockBody, unlockBody } from "~/src/shared/features/utils/overflow";
 import { IframeHTMLAttributes } from "nuxt/dist/app/compat/capi";
 import ModalIFrameVue from "~/src/widgets/other/Modal/ModalIFrame.vue";
+import { IModalSuccessProps } from "~/src/shared/ui/Modal/success/modal-success.types";
+import ModalSuccess from "~/src/shared/ui/Modal/success/ModalSuccess.vue";
 
 const component = extend({});
 type VueComponent = InstanceType<typeof component>;
@@ -51,9 +53,11 @@ const useModalStore = defineStore("modalStore", {
         src: url,
       };
 
-      console.log(url);
-
       this.openModal({ component: ModalIFrameVue, props: options });
+    },
+
+    openSuccessModal(options: IModalSuccessProps) {
+      this.openModal({ component: ModalSuccess, props: options });
     },
   },
 });

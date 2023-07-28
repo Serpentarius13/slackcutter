@@ -1,14 +1,20 @@
 <template>
   <SharedUiNavbarLink
-    v-for="link in navLinks"
-    :link="link"
+    v-for="(link, ix) in navLinks"
     :key="link.text"
-    class="last:text-white"
+    :class="['last:text-white', isAuth && ix === navLinks.length - 1 && '!hidden']"
+    :link="link"
   />
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { TNavLink } from "../../features/types/shared.types";
+
+interface INavbarLinks {
+  isAuth: boolean;
+}
+
+defineProps<INavbarLinks>();
 
 const emailContact = "hi@slackcutter.com";
 
@@ -20,4 +26,4 @@ const navLinks: TNavLink[] = [
 ];
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

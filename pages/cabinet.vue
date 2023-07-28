@@ -2,10 +2,11 @@
   <NuxtPage />
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 definePageMeta({
   layout: "cabinet",
+  middleware: "requires-auth",
 });
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

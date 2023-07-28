@@ -1,30 +1,23 @@
 <template>
   <Teleport to="body">
     <Transition name="modalFade">
-      <div
-        class="modal-wrapper"
-        @click.self="closeModal"
-        v-if="store.modalState?.component"
-      >
+      <div v-if="store.modalState?.component" class="modal-wrapper" @click.self="closeModal">
         <div>
-          <component
-            :is="{ ...store.modalState?.component }"
-            v-bind="store.modalState?.props"
-          />
+          <component :is="{ ...store.modalState?.component }" v-bind="store.modalState?.props" />
         </div>
       </div>
     </Transition>
     <button
+      v-if="store.modalState?.component"
       class="fixed right-[2rem] top-[2rem] z-[501]"
       @click="store.closeModal"
-      v-if="store.modalState?.component"
     >
       <NuxtIcon name="main/cross" />
     </button>
   </Teleport>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useEventListener } from "~/src/shared/features/hooks/useEventListener";
 import useModalStore from "~/stores/useModalStore";
 
@@ -45,18 +38,7 @@ useEventListener(document, "keydown", handleKeyEscape);
 <style lang="scss" scoped>
 .modal {
   &-wrapper {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    @apply bg-black bg-opacity-20;
-
-    left: 0;
-    top: 0;
-    z-index: 500;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @apply bg-black bg-opacity-20 w-screen h-screen fixed left-0 top-0 z-[500] flex items-center justify-center;
   }
 }
 
