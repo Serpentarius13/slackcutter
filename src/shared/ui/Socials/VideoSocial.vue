@@ -2,14 +2,14 @@
   <figure
     class="flex aspect-square w-[3.9rem] items-center rounded-full justify-center border-[1px] border-white border-opacity-[15%] bg-white bg-opacity-20 backdrop-blur-[17px]"
   >
-    <NuxtIcon :name="iconName" class="max-w-full text-white" />
+    <NuxtImg :alt="imgAlt" :src="imgSource" class="max-w-full text-white" />
   </figure>
 </template>
 
-<script setup lang="ts">
-import { IVideoSocial } from "./video-social.types";
+<script lang="ts" setup>
+import { IImage } from "~/src/shared/features/types/shared.types";
 
-defineProps<IVideoSocial>();
+defineProps<IImage>();
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

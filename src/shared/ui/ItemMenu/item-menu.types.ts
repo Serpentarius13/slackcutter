@@ -1,3 +1,5 @@
+import { IImage } from "~/src/shared/features/types/shared.types";
+
 export enum EItemMenuRender {
   BUTTON = "BUTTON",
   ARROW = "ARROW",
@@ -5,6 +7,6 @@ export enum EItemMenuRender {
 
 export interface IItemMenuOption {
   text: string;
-  iconName: string;
+  img: IImage;
   leftRenderType: EItemMenuRender;
 }

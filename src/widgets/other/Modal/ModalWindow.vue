@@ -38,7 +38,7 @@ useEventListener(document, "keydown", handleKeyEscape);
 <style lang="scss" scoped>
 .modal {
   &-wrapper {
-    @apply bg-black bg-opacity-20 w-screen h-screen fixed left-0 top-0 z-[500] flex items-center justify-center;
+    @apply bg-black bg-opacity-40 w-screen h-screen fixed left-0 top-0 z-[500] flex items-center justify-center;
   }
 }
 

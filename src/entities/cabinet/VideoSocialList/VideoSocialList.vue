@@ -1,19 +1,19 @@
 <template>
   <ul class="flex items-center gap-[0.9rem]">
-    <li v-for="social in socials" :key="social.iconName">
-      <SharedUiSocialsVideoSocial :icon-name="social.iconName" />
+    <li v-for="social in socials" :key="social.imgAlt">
+      <SharedUiSocialsVideoSocial :img-alt="social.imgAlt" :img-source="social.imgSource" />
     </li>
   </ul>
 </template>
 
-<script setup lang="ts">
-import { IVideoSocial } from "../../../shared/ui/Socials/video-social.types";
+<script lang="ts" setup>
+import { IImage } from "~/src/shared/features/types/shared.types";
 
 interface IVideoSocialList {
-  socials: IVideoSocial[];
+  socials: IImage[];
 }
 
 defineProps<IVideoSocialList>();
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

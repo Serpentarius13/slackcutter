@@ -7,6 +7,8 @@ import { IframeHTMLAttributes } from "nuxt/dist/app/compat/capi";
 import ModalIFrameVue from "~/src/widgets/other/Modal/ModalIFrame.vue";
 import { IModalSuccessProps } from "~/src/shared/ui/Modal/success/modal-success.types";
 import ModalSuccess from "~/src/shared/ui/Modal/success/ModalSuccess.vue";
+import { IInitModalProps } from "~/src/widgets/cabinet/Modal/InitModal/init-modal.types";
+import InitModal from "~/src/widgets/cabinet/Modal/InitModal/InitModal.vue";
 
 const component = extend({});
 type VueComponent = InstanceType<typeof component>;
@@ -58,6 +60,10 @@ const useModalStore = defineStore("modalStore", {
 
     openSuccessModal(options: IModalSuccessProps) {
       this.openModal({ component: ModalSuccess, props: options });
+    },
+
+    openInitModal(props: IInitModalProps) {
+      this.openModal({ component: InitModal, props });
     },
   },
 });
