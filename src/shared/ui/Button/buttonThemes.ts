@@ -3,10 +3,12 @@ export enum ButtonThemes {
   outline = "outline",
   yellow = "yellow",
   white = "white",
+  blue = "blue",
 }
 
 export enum ButtonSizes {
   medium = "medium",
+  mediumSmall = "medium-small",
 }
 
 export enum ButtonAdditions {

@@ -5,7 +5,12 @@
       :key="option.text"
       class="py-[2.7rem] first:pt-[0] last:pb-[0] border-b-2 border-black border-opacity-[6%] last:border-0"
     >
-      <button class="group flex w-full justify-between items-center">
+      <component
+        :is="decideComponent(option)"
+        :to="decideTo(option)"
+        class="group flex w-full justify-between items-center"
+        @click="decideClick(option)"
+      >
         <figure class="flex items-center gap-[1.6rem]">
           <NuxtImg
             :alt="option.img.imgAlt"
@@ -30,19 +35,38 @@
           class="text-white opacity-40 transition-all group-hover:opacity-100"
           name="main/gt"
         />
-      </button>
+      </component>
     </li>
   </ul>
 </template>
 
 <script lang="ts" setup>
 import { EItemMenuRender, IItemMenuOption } from "./item-menu.types";
+import { isFunction } from "~/src/shared/features/utils/isFunction";
 
 interface IItemMenu {
   items: IItemMenuOption[];
 }
 
 defineProps<IItemMenu>();
+
+const decideComponent = (item: IItemMenuOption) => {
+  if (isFunction(item?.action)) {
+    return "button";
+  }
+
+  return "nuxt-link";
+};
+
+const decideClick = (item: IItemMenuOption) => {
+  if (isFunction(item?.action)) item.action();
+};
+
+const decideTo = (item: IItemMenuOption) => {
+  if (!isFunction(item?.action)) {
+    return item?.action?.link;
+  }
+};
 </script>
 
 <style lang="scss" scoped></style>

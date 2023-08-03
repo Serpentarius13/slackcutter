@@ -4,27 +4,27 @@
       'text-small relative  overflow-x-hidden px-[0.5rem] text-light-gray',
       isHovering && '!text-black',
     ]"
+    :href="link.link"
     @mouseenter="onHover"
     @mouseleave="onUnhover"
-    :href="link.link"
   >
     {{ link.text }}
 
     <Transition name="slide">
       <div
-        class="absolute left-0 top-0 -z-[2] h-full min-w-full bg-yellow px-[1rem]"
         v-if="isHovering"
+        class="absolute left-0 top-0 -z-[2] h-full min-w-full bg-yellow px-[1rem]"
       />
     </Transition>
   </a>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useHover } from "../../features/hooks/useHover";
-import { TNavLink } from "../../features/types/shared.types";
+import { ILink } from "../../features/types/shared.types";
 
 interface INavbarLInk {
-  link: TNavLink;
+  link: ILink;
 }
 
 const { link } = defineProps<INavbarLInk>();
@@ -32,7 +32,7 @@ const { link } = defineProps<INavbarLInk>();
 const { isHovering, onHover, onUnhover } = useHover();
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .nav-link {
   &::after {
     content: "";

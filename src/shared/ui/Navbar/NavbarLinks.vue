@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-import { TNavLink } from "../../features/types/shared.types";
+import { ILink } from "../../features/types/shared.types";
 
 interface INavbarLinks {
   isAuth: boolean;
@@ -18,7 +18,7 @@ defineProps<INavbarLinks>();
 
 const emailContact = "hi@slackcutter.com";
 
-const navLinks: TNavLink[] = [
+const navLinks: ILink[] = [
   { text: "Why Slackcutter", link: "#about" },
   { text: "How it works", link: "#video" },
   { text: "Contact Us", link: `mailto:${emailContact}` },

@@ -13,7 +13,8 @@
 
     <div class="gradiented-bottom p-[5.4rem] rounded-b-medium-small lg:p-[3rem] md:p-[1.4rem]">
       <div
-        class="flex items-end justify-between gap-y-[3rem] border-b-[1px] border-white pb-[4.2rem] lg:flex-col lg:items-start lg:gap-y-[1rem] lg:pb-[2rem]"
+        :style="isAnyMenuOpenedComputed ? { opacity: 0 } : { opacity: 1 }"
+        class="flex items-end justify-between gap-y-[3rem] border-b-[1px] border-white pb-[4.2rem] lg:flex-col lg:items-start lg:gap-y-[1rem] lg:pb-[2rem] transition-all"
       >
         <div>
           <h2 class="heading-medium-small mb-[3.2rem] text-white lg:mb-[1.4rem]">{{ title }}</h2>
@@ -38,18 +39,29 @@
       >
         Create new project
       </EntitiesCabinetCreateProjectBtn>
-      <div>
-        <Transition name="fade">
-          <div
-            v-if="isOpenedMenu"
-            class="w-full h-full transition-all bg-darkest-blue bg-opacity-[50%] left-0 top-0 absolute"
-          >
-            <div class="absolute left-1/2 -translate-x-1/2 w-[90%] bottom-[15rem]">
-              <SharedUiItemMenu :items="items" />
+      <Transition mode="out-in" name="fade">
+        <div
+          v-if="isAnyMenuOpenedComputed"
+          class="w-full h-full transition-all bg-darkest-blue bg-opacity-[50%] left-0 top-0 absolute"
+        >
+          <Transition name="fade">
+            <div v-if="isOpenedMenu">
+              <div
+                v-click-away="closeMenu"
+                class="absolute left-1/2 -translate-x-1/2 w-[90%] bottom-[15rem]"
+              >
+                <SharedUiItemMenu :items="items" />
+              </div>
             </div>
-          </div>
-        </Transition>
-      </div>
+
+            <FeaturesCabinetFileFromLinkUploader
+              v-else-if="isOpenedLinkMenu"
+              v-click-away="closeLinkMenu"
+              class="absolute bottom-0 left-0"
+            />
+          </Transition>
+        </div>
+      </Transition>
     </div>
   </WidgetsCabinetModalInitModalWrapper>
 </template>
@@ -57,23 +69,40 @@
 <script lang="ts" setup>
 import { IInitModalProps } from "./init-modal.types";
 import { EItemMenuRender, IItemMenuOption } from "~/src/shared/ui/ItemMenu/item-menu.types";
-
-const isOpenedMenu = ref<boolean>(false);
-
-const openMenu = () => (isOpenedMenu.value = true);
+import { promptFileDialog } from "~/src/shared/features/utils/promptFileDialog";
 
 defineProps<IInitModalProps>();
 
+const isOpenedMenu = ref<boolean>(false);
+
+const isOpenedLinkMenu = ref<boolean>(false);
+
+const openMenu = () => (isOpenedMenu.value = true);
+const closeMenu = () => (isOpenedMenu.value = false);
+const openLinkMenu = () => {
+  isOpenedMenu.value = false;
+  isOpenedLinkMenu.value = true;
+};
+
+const closeLinkMenu = () => {
+  isOpenedLinkMenu.value = false;
+  isOpenedMenu.value = true;
+};
+
+const isAnyMenuOpenedComputed = computed(() => isOpenedLinkMenu.value || isOpenedMenu.value);
+
 const items: IItemMenuOption[] = [
   {
-    text: "Share to TikTok",
-    leftRenderType: EItemMenuRender.BUTTON,
+    text: "Upload Video by Link",
+    leftRenderType: EItemMenuRender.ARROW,
     img: { imgSource: "/icons/other/link-yellow.svg", imgAlt: "Link icon" },
+    action: openLinkMenu,
   },
   {
-    text: "Instagram",
-    leftRenderType: EItemMenuRender.BUTTON,
+    text: "Select from Gallery",
+    leftRenderType: EItemMenuRender.ARROW,
     img: { imgSource: "/icons/other/export-yellow.svg", imgAlt: "Upload icon" },
+    action: () => promptFileDialog((v) => console.log(v)),
   },
 ];
 </script>

@@ -101,10 +101,22 @@ const classes = computed(() => {
     }
   }
 
+  &.blue {
+    @apply bg-blue text-white border-blue;
+
+    &:hover * {
+      @apply text-blue;
+    }
+  }
+
   // sizes
 
   &.medium {
     @apply h-[6.6rem]  w-[20.1rem] rounded-big lg:w-[17rem];
+  }
+
+  &.medium-small {
+    @apply h-[6.2rem] py-[1.3rem] px-[1.6rem] rounded-big w-full;
   }
 
   // styles
@@ -112,7 +124,7 @@ const classes = computed(() => {
 
 .btn.btn {
   &:disabled {
-    @apply cursor-default bg-gray-400 text-white shadow-none hover:border-none hover:bg-gray-400 hover:shadow-none hover:outline-none;
+    @apply cursor-default bg-gray-400 text-white shadow-none hover:border-none hover:bg-gray-400 hover:shadow-none hover:outline-none border-none;
   }
 }
 </style>

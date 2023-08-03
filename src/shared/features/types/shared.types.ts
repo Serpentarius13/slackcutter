@@ -1,4 +1,4 @@
-export type TNavLink = {
+export type ILink = {
   link: string;
   text: string;
 };
@@ -13,3 +13,5 @@ export interface IImage {
   imgSource: string;
   imgAlt: string;
 }
+
+export type TAnyFunction = (...args: any[]) => any;
