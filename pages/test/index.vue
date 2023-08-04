@@ -1,11 +1,25 @@
 <template>
-  <ClientOnly>
-    <SharedUiItemMenu :items="items" />
-  </ClientOnly>
+  <!--  <ClientOnly>-->
+  <!--    <SharedUiItemMenu :items="items" />-->
+  <!--  </ClientOnly>-->
+
+  <!--  <PacmanAnimation />-->
+
+  <WidgetsCabinetModalProfileModal class="!h-fit fixed left-1/2 -translate-x-1/2 top-0" />
 </template>
 
 <script lang="ts" setup>
 import { EItemMenuRender, IItemMenuOption } from "~/src/shared/ui/ItemMenu/item-menu.types";
+import useModalStore from "~/stores/useModalStore";
+
+const modalStore = useModalStore();
+
+onMounted(() => {
+  modalStore.openLoadingModal();
+  setTimeout(() => {
+    modalStore.closeModal();
+  }, 2000);
+});
 
 const items: IItemMenuOption[] = [
   {

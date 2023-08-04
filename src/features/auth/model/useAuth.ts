@@ -1,5 +1,6 @@
 import { makeAxiosInstance } from "~/api/axios";
-import { IUser, TConfirmationCodeData, TLoginData, TRegisterData } from "../types/auth.types";
+import { IUser, TConfirmationCodeData, TLoginData } from "../types/auth.types";
+import { TEmailData } from "~/src/shared/features/types/zod.types";
 
 type TAuthResponse = {
   access_token: string;
@@ -54,7 +55,7 @@ export function useAuth() {
    * Start registration
    * @param data
    */
-  async function apiStartRegister(data: TRegisterData) {
+  async function apiStartRegister(data: TEmailData) {
     console.log(data);
     await instance.post<{ msg: string }>("/api/auth/register", data);
 
@@ -117,7 +118,7 @@ export function useAuth() {
    * Start password recover
    * @param data
    */
-  async function apiStartPasswordRecover(data: TRegisterData) {
+  async function apiStartPasswordRecover(data: TEmailData) {
     await instance.post<{ msg: string }>("/api/auth/password_recover", data);
 
     return true;

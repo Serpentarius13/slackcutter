@@ -1,18 +1,24 @@
 <template>
   <SharedUiButton
+    :additions="[
+      ButtonAdditions.unshadowed,
+      isUnhovering ? ButtonAdditions.unhovering : ('' as any),
+    ]"
     :theme="ButtonThemes.yellow"
-    :additions="ButtonAdditions.unshadowed"
     class="h-[6.6rem] !w-full font-bold"
   >
     <slot />
   </SharedUiButton>
 </template>
 
-<script setup lang="ts">
-import {
-  ButtonAdditions,
-  ButtonThemes,
-} from "~/src/shared/ui/Button/buttonThemes";
+<script lang="ts" setup>
+import { ButtonAdditions, ButtonThemes } from "~/src/shared/ui/Button/buttonThemes";
+
+interface IAuthButton {
+  isUnhovering?: boolean;
+}
+
+defineProps<IAuthButton>();
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

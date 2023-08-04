@@ -20,7 +20,7 @@
         <NavbarMobileBurger :is-auth="isAuth" class="!hidden md:!flex" />
       </header>
 
-      <SharedUiNavbarUserMenu
+      <SharedUiNavbarProfileUserMenu
         v-if="user"
         :class="opacityClassesComputed"
         :logout="userStore.logout"

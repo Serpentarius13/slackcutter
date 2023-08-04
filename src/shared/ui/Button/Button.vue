@@ -124,7 +124,7 @@ const classes = computed(() => {
 
 .btn.btn {
   &:disabled {
-    @apply cursor-default bg-gray-400 text-white shadow-none hover:border-none hover:bg-gray-400 hover:shadow-none hover:outline-none border-none;
+    @apply cursor-default bg-gray text-white shadow-none hover:border-none hover:bg-gray hover:shadow-none hover:outline-none border-none;
   }
 }
 </style>

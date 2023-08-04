@@ -23,6 +23,10 @@
     @apply text-[2.2rem] leading-[160%] tracking-[0.66px];
   }
 
+  .heading-smaller {
+    @apply text-[2.6rem] font-semibold leading-[180%] tracking-[0.078rem];
+  }
+
   .heading-small {
     @apply font-bebas text-[3.2rem] uppercase leading-[120%];
   }
@@ -41,6 +45,10 @@
 
   .heading-biggest {
     @apply font-bebas text-[6.8rem] uppercase leading-[120%] lg:text-[4.5rem] sm:text-[4rem] xs:text-[3rem];
+  }
+
+  .heading-titlecase {
+    @apply text-[9.1rem] text-white leading-[120%] font-bebas uppercase
   }
 }
 

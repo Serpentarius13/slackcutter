@@ -21,19 +21,16 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  passwordRestoreSchema,
-  TPasswordRestoreSchema,
-} from "~/src/features/auth/types/auth.types";
+import { confirmPasswordSchema, TConfirmPasswordData } from "~/src/shared/features/types/zod.types";
 
 const { handleSubmit, errors } = useForm({
-  validationSchema: toTypedSchema(passwordRestoreSchema),
+  validationSchema: toTypedSchema(confirmPasswordSchema),
 });
 
 const { value: password } = useField("password");
 const { value: confirmPassword } = useField("confirmPassword");
 
-const emit = defineEmits<{ data: [loginData: TPasswordRestoreSchema] }>();
+const emit = defineEmits<{ data: [loginData: TConfirmPasswordData] }>();
 
 const onSubmit = handleSubmit((values) => {
   emit("data", values);

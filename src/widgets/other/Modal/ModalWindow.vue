@@ -1,19 +1,24 @@
 <template>
   <Teleport to="body">
     <Transition name="modalFade">
-      <div v-if="store.modalState?.component" class="modal-wrapper" @click.self="closeModal">
+      <div
+        v-if="store.modalState?.component"
+        :style="store?.modalState?.options?.darkened ? { background: 'rgba(9, 9, 9, 0.92)' } : {}"
+        class="modal-wrapper"
+        @click.self="closeModal(true)"
+      >
         <div>
           <component :is="{ ...store.modalState?.component }" v-bind="store.modalState?.props" />
         </div>
       </div>
     </Transition>
-    <button
-      v-if="store.modalState?.component"
-      class="fixed right-[2rem] top-[2rem] z-[501]"
-      @click="store.closeModal"
-    >
-      <NuxtIcon name="main/cross" />
-    </button>
+    <!--    <button-->
+    <!--      v-if="store.modalState?.component"-->
+    <!--      class="fixed right-[2rem] top-[2rem] z-[501]"-->
+    <!--      @click="store.closeModal"-->
+    <!--    >-->
+    <!--      <NuxtIcon name="main/cross" />-->
+    <!--    </button>-->
   </Teleport>
 </template>
 
@@ -24,12 +29,12 @@ import useModalStore from "~/stores/useModalStore";
 const store = useModalStore();
 
 //* Function with commit to be closing modal
-const closeModal = () => {
-  store.closeModal();
+const closeModal = (fromClick: boolean) => {
+  store.closeModal(fromClick);
 };
 
 const handleKeyEscape = (event: KeyboardEvent) => {
-  if (event.key === "Escape") closeModal();
+  if (event.key === "Escape") closeModal(true);
 };
 
 useEventListener(document, "keydown", handleKeyEscape);

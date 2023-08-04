@@ -1,19 +1,8 @@
 import z from "zod";
+import { passwordRegex, refineDoublePasswordSchema } from "~/src/shared/features/types/zod.types";
 
-const passwordRegex = z
-  .string()
-  .min(8, "Password should have at least 8 symbols")
-  .regex(
-    /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[^\w\s]).{8,}$/,
-    "Passwords should have one special symbol and a digit"
-  );
-
-export const registerSchema = z.object({
-  email: z.string().nonempty("Enter your email").email("Enter correct email"),
-});
-
-export const registerCompleteSchema = z
-  .object({
+export const registerCompleteSchema = refineDoublePasswordSchema(
+  z.object({
     firstName: z
       .string()
       .nonempty("Enter your first name please")
@@ -26,21 +15,8 @@ export const registerCompleteSchema = z
 
     password: passwordRegex,
     confirmPassword: passwordRegex,
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
-    path: ["confirmPassword"],
-  });
-
-export const passwordRestoreSchema = z
-  .object({
-    password: passwordRegex,
-    confirmPassword: passwordRegex,
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
-    path: ["confirmPassword"],
-  });
+  }),
+);
 
 export const loginSchema = z.object({
   email: z.string().nonempty("Enter your email").email("Enter correct email"),
@@ -71,6 +47,5 @@ export type TRegisterCompleteDTO = {
 };
 
 export type TLoginData = z.infer<typeof loginSchema>;
-export type TRegisterData = z.infer<typeof registerSchema>;
+
 export type TRegisterCompleteData = z.infer<typeof registerCompleteSchema>;
-export type TPasswordRestoreSchema = z.infer<typeof passwordRestoreSchema>;

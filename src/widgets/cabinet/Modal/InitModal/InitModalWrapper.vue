@@ -4,7 +4,6 @@
   >
     <SharedUiButtonModalButton
       class="absolute right-[3.25rem] top-[3.2rem] z-[5] transition-all hover:bg-white hover:text-black lg:right-[2.4rem] lg:top-[2rem]"
-      @click="modalStore.closeModal"
     />
 
     <slot />

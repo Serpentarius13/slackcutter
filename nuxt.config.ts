@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@nuxt/image-edge",
     "nuxt-swiper",
     "@vite-pwa/nuxt",
+    "pinia-logger-nuxt",
   ],
 
   css: ["@/styles/main.scss", "aos/dist/aos.css"],
