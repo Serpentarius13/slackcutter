@@ -1,5 +1,5 @@
 <template>
-  <WidgetsCabinetVideoEditorVideoEditorSidepanelStepsGenerate />
+  <WidgetsCabinetVideoEditorVideoEditorSidepanelStepsExport />
 </template>
 
 <script lang="ts" setup></script>

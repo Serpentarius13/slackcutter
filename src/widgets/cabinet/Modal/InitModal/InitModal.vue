@@ -71,10 +71,12 @@ import { IInitModalProps } from "./init-modal.types";
 import { EItemMenuRender, IItemMenuOption } from "~/src/shared/ui/ItemMenu/item-menu.types";
 import { EFileTypes, promptFileDialog } from "~/src/shared/features/utils/promptFileDialog";
 import { useVideoEditor } from "~/stores/useVideoEditor";
+import useModalStore from "~/stores/useModalStore";
 
 defineProps<IInitModalProps>();
 
 const videoEditorStore = useVideoEditor();
+const modalStore = useModalStore();
 
 const router = useRouter();
 
@@ -103,6 +105,7 @@ const saveFileAndRedirect = (files: File[]) => {
 
   videoEditorStore.setVideoFile(file);
 
+  modalStore.closeModal();
   router.push("/editor");
 
   console.log("here");

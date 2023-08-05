@@ -55,6 +55,10 @@ const classes = computed(() => {
     @apply border-white border-opacity-40 bg-transparent text-white hover:border-transparent hover:bg-purple;
   }
 
+  &.outline-yellow {
+    @apply border-yellow text-white bg-transparent hover:text-black hover:bg-yellow;
+  }
+
   &.yellow {
     background: radial-gradient(
         42.56% 215.72% at 92.43% 82.5%,

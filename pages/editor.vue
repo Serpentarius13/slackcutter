@@ -1,9 +1,11 @@
 <template>
-  <NuxtPage />
+  <WidgetsCabinetVideoEditor>
+    <NuxtPage />
+  </WidgetsCabinetVideoEditor>
 </template>
 
 <script lang="ts" setup>
-definePageMeta({ layout: "editor", middleware: "requires-auth" });
+definePageMeta({ layout: "editor", middleware: ["requires-auth", "requires-video"] });
 </script>
 
 <style lang="scss" scoped></style>

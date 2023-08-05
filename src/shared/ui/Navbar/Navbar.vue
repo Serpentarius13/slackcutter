@@ -1,7 +1,8 @@
 <template>
   <div data-aos="fade-in" data-aos-duration="2000" data-aos-once="true">
     <div
-      class="flex gap-[1.8rem] w-full container top-[2.8rem] -translate-x-1/2 absolute left-1/2 items-center"
+      class="flex gap-[1.8rem] w-full container z-[20] top-[2.8rem] -translate-x-1/2 absolute left-1/2 items-center"
+      v-bind="$attrs"
     >
       <header
         :class="[

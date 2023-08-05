@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <div id="player" class="h-full w-full"></div>
+    <div id="player" :style="{ width: '100%', height: '100%' }" class="h-full w-full"></div>
     <!-- <Transition name="fade">
       <div
         class="shadowed absolute left-0 top-0 z-[120] flex h-full w-full items-center justify-center bg-black bg-opacity-40"
@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import pjs from "../../lib/pjs";
 
 const props = defineProps<{ videoUrl: string }>();
@@ -36,31 +36,27 @@ onMounted(() => {
     const player = new Playerjs({
       id: "player",
       file: props.videoUrl,
-      ready: "playerReady",
     });
+
+    console.log(player);
 
     window.addEventListener("video-start", () => {
       player.api("play");
     });
 
-    player.addEventListener("seek", () => {
-      console.log("seeked");
-    });
-
-    player.addEventListener("cut", () => {
-      console.log("cutted");
-    });
+    // player.addEventListener("seek", () => {
+    //   console.log("seeked");
+    // });
+    //
+    // player.addEventListener("cut", () => {
+    //   console.log("cutted");
+    // });
   });
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .shadowed {
-  background: radial-gradient(
-    ellipse at top,
-
-    transparent 0%,
-    rgba(0, 0, 0, 0.705) 70%
-  );
+  background: radial-gradient(ellipse at top, transparent 0%, rgba(0, 0, 0, 0.705) 70%);
 }
 </style>

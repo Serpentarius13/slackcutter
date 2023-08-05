@@ -3,6 +3,14 @@
     @apply mx-auto w-full max-w-[120rem] xl:max-w-[95vw];
   }
 
+  .container-big {
+    @apply mx-auto w-full max-w-[138rem] xl:max-w-[95vw]
+  }
+
+  .container-bg {
+    @apply rounded-[2.5rem] bg-white bg-opacity-10 backdrop-blur-[8.5px] border-[1px] border-white border-opacity-[15%]
+  }
+
   .text-smallest {
     @apply text-[1.2rem] leading-[160%] tracking-[0.36px];
   }
@@ -33,6 +41,10 @@
 
   .heading-medium-small {
     @apply font-bebas text-[3.4rem] uppercase leading-[120%];
+  }
+
+  .heading-medium-semi {
+    @apply font-bebas text-[3.6rem] uppercase leading-[120%]
   }
 
   .heading-medium {

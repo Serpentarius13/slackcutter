@@ -1,12 +1,26 @@
 import axios, { AxiosInstance } from "axios";
 import { useToast } from "vue-toastification/dist/index.mjs";
+import { AUTH_COOKIE_KEY } from "~/src/shared/features/constants/auth.constants";
 
-export function makeAxiosInstance(): AxiosInstance {
+interface IAxiosInstanceSettings {
+  shouldHaveToken: boolean;
+}
+
+type TAxiosInstanceSettings = Partial<IAxiosInstanceSettings>;
+
+export function makeAxiosInstance({ shouldHaveToken }: TAxiosInstanceSettings = {}): AxiosInstance {
   const config = useRuntimeConfig();
+
+  const token = useCookie(AUTH_COOKIE_KEY).value;
+
+  if (!token && shouldHaveToken) throw new Error("No token was provided");
 
   const instance = axios.create({
     baseURL: config.public.apiBase,
     timeout: 5000,
+    headers: {
+      Authorization: token ? `Bearer ${token}` : ``,
+    },
   });
 
   instance.interceptors.response.use(

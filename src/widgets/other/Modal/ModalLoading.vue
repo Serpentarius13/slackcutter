@@ -36,6 +36,7 @@ const setProgress = (val: number) => {
 
 onMounted(() => {
   setInterval(() => {
+    if (progress.value === 100) return;
     setProgress(progress.value + 1);
   }, 100);
 

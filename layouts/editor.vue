@@ -1,7 +1,7 @@
 <template>
-  <SharedUiNavbar />
+  <SharedUiNavbar class="!container-big" />
 
-  <main>
+  <main class="!pt-[17.5rem]">
     <slot />
   </main>
 </template>
