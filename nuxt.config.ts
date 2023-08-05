@@ -12,6 +12,10 @@ export default defineNuxtConfig({
     "pinia-logger-nuxt",
   ],
 
+  routeRules: {
+    "/editor/**": { ssr: false },
+  },
+
   css: ["@/styles/main.scss", "aos/dist/aos.css"],
   runtimeConfig: {
     public: {
