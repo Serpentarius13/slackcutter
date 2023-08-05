@@ -11,4 +11,6 @@
   <WidgetsHomeFooter class="mt-[10.2rem]" />
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts" setup>
+definePageMeta({ layout: "home" });
+</script>

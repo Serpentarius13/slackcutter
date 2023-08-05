@@ -69,9 +69,14 @@
 <script lang="ts" setup>
 import { IInitModalProps } from "./init-modal.types";
 import { EItemMenuRender, IItemMenuOption } from "~/src/shared/ui/ItemMenu/item-menu.types";
-import { promptFileDialog } from "~/src/shared/features/utils/promptFileDialog";
+import { EFileTypes, promptFileDialog } from "~/src/shared/features/utils/promptFileDialog";
+import { useVideoEditor } from "~/stores/useVideoEditor";
 
 defineProps<IInitModalProps>();
+
+const videoEditorStore = useVideoEditor();
+
+const router = useRouter();
 
 const isOpenedMenu = ref<boolean>(false);
 
@@ -91,6 +96,18 @@ const closeLinkMenu = () => {
 
 const isAnyMenuOpenedComputed = computed(() => isOpenedLinkMenu.value || isOpenedMenu.value);
 
+const saveFileAndRedirect = (files: File[]) => {
+  const file = files[0];
+
+  if (!file) return;
+
+  videoEditorStore.setVideoFile(file);
+
+  router.push("/editor");
+
+  console.log("here");
+};
+
 const items: IItemMenuOption[] = [
   {
     text: "Upload Video by Link",
@@ -102,7 +119,7 @@ const items: IItemMenuOption[] = [
     text: "Select from Gallery",
     leftRenderType: EItemMenuRender.ARROW,
     img: { imgSource: "/icons/other/export-yellow.svg", imgAlt: "Upload icon" },
-    action: () => promptFileDialog((v) => console.log(v)),
+    action: () => promptFileDialog(saveFileAndRedirect, EFileTypes.VIDEO),
   },
 ];
 </script>

@@ -1,12 +1,14 @@
 <template>
-  <main class="flex h-screen w-screen">
+  <SharedUiNavbar />
+
+  <main>
     <slot />
   </main>
 </template>
 
 <script lang="ts" setup>
 useHead({
-  bodyAttrs: { class: ["auth-view"] },
+  bodyAttrs: { class: ["landing-view"] },
 });
 </script>
 

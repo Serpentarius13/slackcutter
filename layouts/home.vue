@@ -1,12 +1,13 @@
 <template>
-  <main class="flex h-screen w-screen">
+  <SharedUiNavbar :is-homepage="true" />
+  <main class="pt-[20.6rem] lg:pt-[15rem]">
     <slot />
   </main>
 </template>
 
 <script lang="ts" setup>
 useHead({
-  bodyAttrs: { class: ["auth-view"] },
+  bodyAttrs: { class: ["landing-view"] },
 });
 </script>
 

@@ -6,7 +6,7 @@
 
     <SharedUiTabsWrapper
       :button-classes="[
-        'current:bg-gray current:opacity-100 rounded-[1.2rem] opacity-70 text-white transition-all py-[2rem] px-[2.95rem] text-medium w-full',
+        'current:bg-gray-primary current:opacity-100 rounded-[1.2rem] opacity-70 text-white transition-all py-[2rem] px-[2.95rem] text-medium w-full',
       ]"
       :nav-classes="['flex flex-col gap-[1.4rem] w-full']"
       class="grid grid-cols-[auto_1fr] gap-[2.2rem] h-full"

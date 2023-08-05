@@ -36,7 +36,7 @@ module.exports = {
         "dark-purple": "#6931F0",
         "light-black": "#1C1C1C",
         blue: "#0057FF",
-        gray: "#4B4C5D",
+        "gray-primary": "#4B4C5D",
         "modal-bg": "rgba(89, 96, 128, 0.30)",
       },
 

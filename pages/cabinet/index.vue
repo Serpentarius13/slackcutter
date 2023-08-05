@@ -1,23 +1,17 @@
 <template>
   <WidgetsCabinetCabinetItemList
-    title="My projects"
     :card-list="projectsCardList"
     class="mb-[7.6rem]"
+    title="My projects"
   />
 
-  <WidgetsCabinetCabinetItemList
-    title="Templates"
-    :card-list="templatesCardList"
-  />
+  <WidgetsCabinetCabinetItemList :card-list="templatesCardList" title="Templates" />
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { IProject } from "~/src/entities/cabinet/ProjectCard/project-card.types";
 import { ITemplate } from "~/src/entities/cabinet/TemplateCard/template-card.types";
-import {
-  ECabinetCardsTypes,
-  ICardList,
-} from "~/src/entities/cabinet/cabinet-cards.types";
+import { ECabinetCardsTypes, ICardList } from "~/src/entities/cabinet/cabinet-cards.types";
 
 const projects: IProject[] = [
   {
@@ -91,4 +85,4 @@ const templatesCardList: ICardList = {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

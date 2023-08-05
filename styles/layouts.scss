@@ -1,0 +1,49 @@
+
+body {
+  &.auth-view.auth-view {
+    background: #04072d;
+    @apply text-black;
+  }
+
+  &.cabinet-view.cabinet-view {
+    background: linear-gradient(
+                    to bottom,
+                    #0057ff 0%,
+                    rgba(0, 87, 255, 1) 10%,
+                    #04072d 35%
+    );
+  }
+
+  &.landing-view.landing-view {
+
+    background: url("/img/home/home-bg.png") 0 0 / cover no-repeat,
+    #0a0f17;
+
+    @media (max-width: 1440px) {
+      background: url("/img/home/home-bg-laptop.png") 0 0 / cover no-repeat,
+      #0a0f17;
+    }
+
+    @media (max-width: 1024px) {
+      background: url("/img/home/home-bg-tablet.png") 0 0 / cover no-repeat,
+      #0a0f17;
+    }
+
+    @media (max-width: 600px) {
+      background: url("/img/home/home-bg-phone-big.png") 0 0 / cover no-repeat,
+      #0a0f17;
+    }
+
+    @media (max-width: 430px) {
+      background: url("/img/home/home-bg-phone.png") 0 0 / cover no-repeat,
+      #0a0f17;
+    }
+
+  }
+}
+
+html {
+  &.font-size-144 {
+    font-size: 62.5%;
+  }
+}

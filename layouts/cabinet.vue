@@ -5,16 +5,10 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts" setup>
+useHead({
+  bodyAttrs: { class: ["cabinet-view"] },
+});
+</script>
 
-<style scoped lang="scss">
-:global(body) {
-  background: linear-gradient(
-    to bottom,
-    #0057ff 0%,
-    rgba(0, 87, 255, 1) 10%,
-    #04072d 35%
-  );
-  min-height: 100vh;
-}
-</style>
+<style lang="scss" scoped></style>

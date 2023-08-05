@@ -1,6 +1,8 @@
 @import "./base/tailwind.scss", "./fonts/fonts.scss", "./base/utilities.scss",
 "./base/animations.scss";
 
+@import './layouts.scss';
+
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 @tailwind base;
@@ -24,7 +26,7 @@ html {
 }
 
 body {
-  @apply relative min-h-max w-screen max-w-[100vw] overflow-x-hidden text-white;
+  @apply relative min-h-screen w-screen max-w-[100vw] overflow-x-hidden text-white;
 }
 
 #app {

@@ -5,12 +5,12 @@
       v-bind="$attrs"
     >
       <div class="lg:gap-[1.2rem] md:gap-[1.4rem] flex items-center gap-[2.8rem]">
-        <a href="/cabinet">
+        <NuxtLink to="/cabinet">
           <NuxtImg
             class="w-[5.2rem] aspect-square rounded-full bg-blue-500 md:w-[4rem] lg:w-[4.5rem]"
             src="/img/home/home-ghost.png"
           />
-        </a>
+        </NuxtLink>
 
         <span
           class="text-small text-white overflow-ellipsis max-w-[50%] overflow-hidden whitespace-nowrap block"
