@@ -5,9 +5,13 @@ export const downloadFile = (file: File) => {
   const a = document.createElement("a");
 
   a.href = link;
-  a.download = `${file.name}.mp4`;
+  a.download = file.name;
+
   document.body.appendChild(a);
-  URL.revokeObjectURL(link);
 
   a.click();
+
+  document.body.removeChild(a);
+
+  URL.revokeObjectURL(link);
 };
