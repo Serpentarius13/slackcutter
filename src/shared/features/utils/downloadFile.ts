@@ -5,7 +5,7 @@ export const downloadFile = (file: File) => {
   const a = document.createElement("a");
 
   a.href = link;
-  a.download = file.name;
+  a.download = `${file.name}.mp4`;
 
   document.body.appendChild(a);
 
