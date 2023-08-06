@@ -1,25 +1,29 @@
 import { makeAxiosInstance } from "~/api/axios";
 import { videoApiRoutes } from "~/src/features/cabinet/model/videoApiRoutes";
+import {
+  makeBlobFromArrayBuffer,
+  makeFileFromBlob,
+} from "~/src/shared/features/utils/makeBlobFromArrayBuffer";
 
-type TVideoRecordResponse = { id: number };
+type TRecordResponse = { id: number };
 
 export const useVideoApi = () => {
   const instance = makeAxiosInstance({ shouldHaveToken: true });
 
-  async function makeVideoRecord(video: File, audio?: File) {
-    const dto = { video_file: video };
+  async function makeVideoRecord(video: File, audio?: File | null) {
+    const dto = { video_file: video } as any;
 
     if (audio) {
       dto["audio_file"] = audio;
     }
 
-    const { data } = await instance.postForm<TVideoRecordResponse>(videoApiRoutes.video, dto);
+    const { data } = await instance.postForm<TRecordResponse>(videoApiRoutes.video, dto);
 
     return data;
   }
 
   async function deleteVideoRecord(id: number) {
-    await instance.delete(videoApiRoutes.video, { id });
+    await instance.delete(`${videoApiRoutes.video}/${id}`);
     return true;
   }
 
@@ -34,8 +38,8 @@ export const useVideoApi = () => {
     return data;
   }
 
-  async function makeClip(videoId: number, outputName?: string = "") {
-    const { data } = await instance.post(videoApiRoutes.clip, {
+  async function makeClip(videoId: number, outputName: string = "slackcutter_clip") {
+    const { data } = await instance.post<TRecordResponse>(videoApiRoutes.clip, {
       id: videoId,
       output_name: outputName,
     });
@@ -43,8 +47,8 @@ export const useVideoApi = () => {
     return data;
   }
 
-  async function deleteClip(videoId: number) {
-    await instance.delete(videoApiRoutes.clip, { id: videoId });
+  async function deleteClip(id: number) {
+    await instance.delete(`${videoApiRoutes.clip}/${id}`);
     return true;
   }
 
@@ -55,9 +59,13 @@ export const useVideoApi = () => {
   }
 
   async function downloadClip(clipId: number) {
-    const { data } = await instance.post(videoApiRoutes.downloadClip, { id: clipId });
+    const { data } = await instance.post(
+      videoApiRoutes.downloadClip,
+      { id: clipId },
+      { responseType: "arraybuffer" },
+    );
 
-    return data;
+    return makeFileFromBlob(makeBlobFromArrayBuffer(data));
   }
 
   return {

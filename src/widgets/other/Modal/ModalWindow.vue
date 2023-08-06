@@ -5,7 +5,7 @@
         v-if="store.modalState?.component"
         :style="store?.modalState?.options?.darkened ? { background: 'rgba(9, 9, 9, 0.92)' } : {}"
         class="modal-wrapper"
-        @click.self="closeModal(true)"
+        @click.self="!store.modalState.options?.notClosableFromOutside && closeModal(true)"
       >
         <div>
           <component :is="{ ...store.modalState?.component }" v-bind="store.modalState?.props" />

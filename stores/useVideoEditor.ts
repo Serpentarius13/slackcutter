@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { makeFileUrl } from "~/src/shared/features/utils/makeFileUrl";
 import { useVideoApi } from "~/src/features/cabinet/model/useVideoApi";
+import { downloadFile } from "~/src/shared/features/utils/downloadFile";
 
 interface IVideoEditorStore {
   videoFile: File | null;
@@ -8,6 +9,7 @@ interface IVideoEditorStore {
   videoReceived: {
     videoId: number | null;
     clipId: number | null;
+    downloadedClip: File | null;
   };
 }
 
@@ -18,6 +20,7 @@ export const useVideoEditor = defineStore("video-editor", {
     videoReceived: {
       videoId: null,
       clipId: null,
+      downloadedClip: null,
     },
   }),
   actions: {
@@ -47,6 +50,26 @@ export const useVideoEditor = defineStore("video-editor", {
 
       this.videoReceived.clipId = id;
     },
+
+    setClipId(clipId: number) {
+      this.videoReceived.clipId = clipId;
+    },
+
+    async loadClip() {
+      if (!this.videoReceived.clipId) return;
+
+      const { downloadClip } = useVideoApi();
+
+      const clip = await downloadClip(this.videoReceived.clipId);
+
+      this.videoReceived.downloadedClip = clip;
+    },
+
+    downloadClip() {
+      if (!this.videoReceived.downloadedClip) return;
+
+      downloadFile(this.videoReceived.downloadedClip);
+    },
   },
   getters: {
     videoUrlLink(): string {
@@ -54,6 +77,12 @@ export const useVideoEditor = defineStore("video-editor", {
     },
     audioUrlLink(): string {
       return this.audioFile ? makeFileUrl(this.audioFile) : "";
+    },
+
+    clipVideoLink(): string {
+      return this.videoReceived?.downloadedClip
+        ? makeFileUrl(this.videoReceived.downloadedClip)
+        : "";
     },
   },
 });

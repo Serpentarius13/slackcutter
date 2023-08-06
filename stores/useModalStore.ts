@@ -19,6 +19,7 @@ type VueComponent = InstanceType<typeof component>;
 interface IModalOptions {
   darkened?: boolean;
   closeDelay?: number | null;
+  notClosableFromOutside?: boolean;
 }
 
 // ? Тип компонента должен работать.
@@ -100,7 +101,7 @@ const useModalStore = defineStore("modalStore", {
       this.openModal({
         component: ModalLoading,
         props: {},
-        options: { darkened: true, closeDelay: 400 },
+        options: { darkened: true, closeDelay: 400, notClosableFromOutside: true },
       });
     },
 

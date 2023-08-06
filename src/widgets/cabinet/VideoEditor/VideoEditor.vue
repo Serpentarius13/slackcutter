@@ -1,7 +1,11 @@
 <template>
   <section class="container-big grid-cols-[0.6fr_0.4fr] grid gap-[2.5rem]">
     <div class="grid grid-rows-[0.9fr_0.1fr] gap-[2.4rem] p-[3.2rem] rounded-[2.5rem] container-bg">
-      <SharedUiVideo :video-url="videoStore.videoUrlLink" class="w-full h-full aspect-square" />
+      <SharedUiVideo
+        :key="`${videoStore.clipVideoLink} ${videoStore.videoUrlLink}`"
+        :video-url="isClip ? videoStore.clipVideoLink : videoStore.videoUrlLink"
+        class="w-full h-full aspect-square"
+      />
 
       <Transition mode="out-in" name="fade">
         <p
@@ -23,7 +27,9 @@ import { EItemMenuRender, IItemMenuOption } from "~/src/shared/ui/ItemMenu/item-
 import { EFileTypes, promptFileDialog } from "~/src/shared/features/utils/promptFileDialog";
 import { useVideoEditor } from "~/stores/useVideoEditor";
 
-interface IVideoEditorProps {}
+interface IVideoEditorProps {
+  isClip?: boolean;
+}
 
 defineProps<IVideoEditorProps>();
 

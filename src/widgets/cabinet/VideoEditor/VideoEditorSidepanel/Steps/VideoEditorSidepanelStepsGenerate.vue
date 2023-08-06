@@ -46,10 +46,15 @@ const videoStore = useVideoEditor();
 const router = useRouter();
 
 const makeVideoRecord = () => {
-  videoStore.makeVideoRecord().then(() => {
-    modalStore.closeModal();
+  videoStore.makeVideoRecord().then(async () => {
+    const { videoId } = videoStore.videoReceived;
 
-    router.push(`/editor/${videoStore.videoReceived.videoId}`);
+    if (!videoId) return modalStore.closeModal();
+
+    videoStore.makeClip().then(() => {
+      modalStore.closeModal();
+      router.push(`/editor/${videoStore.videoReceived.clipId}`);
+    });
   });
   modalStore.openLoadingModal();
 };

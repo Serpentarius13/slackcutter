@@ -1,1 +1,1 @@
-export const makeFileUrl = (file: File) => URL.createObjectURL(file);
+export const makeFileUrl = (file: File | Blob) => URL.createObjectURL(file);

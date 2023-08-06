@@ -17,7 +17,7 @@ export function makeAxiosInstance({ shouldHaveToken }: TAxiosInstanceSettings = 
 
   const instance = axios.create({
     baseURL: config.public.apiBase,
-    timeout: 5000,
+
     headers: {
       Authorization: token ? `Bearer ${token}` : ``,
     },

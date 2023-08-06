@@ -7,6 +7,7 @@
 <script lang="ts" setup>
 useHead({
   bodyAttrs: { class: ["auth-view"] },
+  htmlAttrs: { class: ["font-size-144"] },
 });
 </script>
 
