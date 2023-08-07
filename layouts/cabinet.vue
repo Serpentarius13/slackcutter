@@ -8,6 +8,7 @@
 <script lang="ts" setup>
 useHead({
   bodyAttrs: { class: ["cabinet-view"] },
+  htmlAttrs: { class: ["font-size-144"] },
 });
 </script>
 

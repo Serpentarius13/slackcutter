@@ -22,6 +22,7 @@ export default defineNuxtConfig({
       apiBase: process.env.API_URL,
       baseUrl: process.env.BASE_URL,
       googleAuthToken: process.env.GOOGLE_AUTH_TOKEN,
+      facebookApiId: process.env.FACEBOOK_APP_ID,
     },
   },
 
