@@ -97,10 +97,10 @@ const useModalStore = defineStore("modalStore", {
       this.openModal({ component: ProfileModal, props: {}, options: { darkened: true } });
     },
 
-    openLoadingModal() {
+    openLoadingModal(tickTime = 200) {
       this.openModal({
         component: ModalLoading,
-        props: {},
+        props: { msTickTime: tickTime },
         options: { darkened: true, closeDelay: 400, notClosableFromOutside: true },
       });
     },

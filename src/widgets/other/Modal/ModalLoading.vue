@@ -23,6 +23,12 @@
 import useModalStore from "~/stores/useModalStore";
 import { animateValue } from "~/src/shared/features/utils/animeValue";
 
+interface IModalLoading {
+  msTickTime?: number;
+}
+
+const props = withDefaults(defineProps<IModalLoading>(), { msTickTime: 100 });
+
 const progress = ref<number>(0);
 const progressRef = ref<HTMLElement | null>();
 
@@ -38,7 +44,7 @@ onMounted(() => {
   setInterval(() => {
     if (progress.value === 100) return;
     setProgress(progress.value + 1);
-  }, 100);
+  }, props.msTickTime);
 
   modalStore.$subscribe((_, state) => {
     if (!state.isOpened) {

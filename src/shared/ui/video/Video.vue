@@ -1,6 +1,9 @@
 <template>
   <div class="relative">
-    <div id="player" :style="{ width: '100%', height: '100%' }" class="h-full w-full"></div>
+    <div
+      id="player"
+      :style="{ width: '100%', height: '100%', maxWidth: '100%', maxHeight: '100%' }"
+    ></div>
     <!-- <Transition name="fade">
       <div
         class="shadowed absolute left-0 top-0 z-[120] flex h-full w-full items-center justify-center bg-black bg-opacity-40"

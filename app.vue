@@ -30,7 +30,7 @@ onMounted(() => {
 });
 //
 // useHead({
-//   script: [{ src: "/scripts/facebook.ts", tagPosition: "bodyOpen" }],
+//   script: [{ src: "/scripts/facebook.client.ts", tagPosition: "bodyOpen" }],
 // });
 </script>
 

@@ -10,7 +10,7 @@
     </div>
 
     <div>
-      <SharedUiItemMenu v-else :items="menuItems" class="!bg-opacity-10 mb-[2.4rem]" />
+      <SharedUiItemMenu :items="menuItems" class="!bg-opacity-10 mb-[2.4rem]" />
       <SharedUiButton :theme="ButtonThemes.blue" class="!w-full" @click="videoStore.downloadClip">
         <div class="grid grid-cols-[0.9fr_0.1fr] gap-[1.4rem] items-center w-full">
           <span class="text-medium font-bold text-white"> Export </span>
@@ -34,7 +34,7 @@ defineProps<IVideoEditorSidepanelStepsExportProps>();
 
 const videoStore = useVideoEditor();
 
-const menuItems: IItemMenuOption = [
+const menuItems: IItemMenuOption[] = [
   {
     img: { imgSource: "/icons/social/facebook-yellow.svg", imgAlt: "Yellow Facebook icon" },
     text: "Export to Facebook",
