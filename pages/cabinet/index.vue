@@ -1,6 +1,6 @@
 <template>
   <WidgetsCabinetCabinetItemList
-    :card-list="projectsCardList"
+    :card-list="{ type: ECabinetCardsTypes.PROJECT, items: clips ?? [] }"
     class="mb-[7.6rem]"
     title="My projects"
   />
@@ -9,69 +9,15 @@
 </template>
 
 <script lang="ts" setup>
-import { IProject } from "~/src/entities/cabinet/ProjectCard/project-card.types";
 import { ITemplate } from "~/src/entities/cabinet/TemplateCard/template-card.types";
 import { ECabinetCardsTypes, ICardList } from "~/src/entities/cabinet/cabinet-cards.types";
+import { useVideoApi } from "~/src/features/cabinet/model/useVideoApi";
 
-const projects: IProject[] = [
-  {
-    img: "/img/home/home-ghost.png",
-    title: "Summer Chill",
-    duration: "0:45",
-    lastUpdate: new Date().toUTCString().toString(),
-  },
-  {
-    img: "/img/home/home-ghost.png",
-    title: "Summer Chill",
-    duration: "0:45",
-    lastUpdate: new Date().toUTCString().toString(),
-  },
-  {
-    img: "/img/home/home-ghost.png",
-    title: "Summer Chill",
-    duration: "0:45",
-    lastUpdate: new Date().toUTCString().toString(),
-  },
-  {
-    img: "/img/home/home-ghost.png",
-    title: "Summer Chill",
-    duration: "0:45",
-    lastUpdate: new Date().toUTCString().toString(),
-  },
-  {
-    img: "/img/home/home-ghost.png",
-    title: "Summer Chill",
-    duration: "0:45",
-    lastUpdate: new Date().toUTCString().toString(),
-  },
-];
+const { getAllClips } = useVideoApi();
 
-const projectsCardList: ICardList = {
-  type: ECabinetCardsTypes.PROJECT,
-  items: projects,
-};
+const { data: clips } = await useLazyAsyncData("projects", () => getAllClips());
 
 const templates: ITemplate[] = [
-  {
-    img: "/img/cabinet/template-prev.png",
-    title: "Summer Chill",
-    text: "lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
-  },
-  {
-    img: "/img/cabinet/template-prev.png",
-    title: "Summer Chill",
-    text: "lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
-  },
-  {
-    img: "/img/cabinet/template-prev.png",
-    title: "Summer Chill",
-    text: "lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
-  },
-  {
-    img: "/img/cabinet/template-prev.png",
-    title: "Summer Chill",
-    text: "lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum",
-  },
   {
     img: "/img/cabinet/template-prev.png",
     title: "Summer Chill",

@@ -4,6 +4,7 @@ import {
   makeBlobFromArrayBuffer,
   makeFileFromBlob,
 } from "~/src/shared/features/utils/makeBlobFromArrayBuffer";
+import { IProjectApiData } from "~/src/entities/cabinet/ProjectCard/project-card.types";
 
 type TRecordResponse = { id: number };
 
@@ -53,9 +54,9 @@ export const useVideoApi = () => {
   }
 
   async function getAllClips() {
-    const { data } = await instance.post(videoApiRoutes.clips);
+    const { data } = await instance.get<{ clips: IProjectApiData[] }>(videoApiRoutes.clips);
 
-    return data;
+    return data.clips;
   }
 
   async function downloadClip(clipId: number) {

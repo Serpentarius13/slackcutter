@@ -11,21 +11,13 @@
 <script lang="ts" setup>
 import { EItemMenuRender, IItemMenuOption } from "~/src/shared/ui/ItemMenu/item-menu.types";
 import useModalStore from "~/stores/useModalStore";
-import { useVideoApi } from "~/src/features/cabinet/model/useVideoApi";
 
 const modalStore = useModalStore();
 
 onMounted(() => {
-  modalStore.openLoadingModal();
-  setTimeout(() => {
-    modalStore.closeModal();
-  }, 2000);
-
-  const { downloadClip } = useVideoApi();
-
-  downloadClip(1).then((d) => {
-    console.log(d);
-  });
+  download("https://www.youtube.com/watch?v=LI_dzsMVN9Q", "abobus.mp4", "video/mp4").then((d) =>
+    console.log(d),
+  );
 });
 
 const items: IItemMenuOption[] = [

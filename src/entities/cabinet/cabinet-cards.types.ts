@@ -1,4 +1,4 @@
-import { IProject } from "./ProjectCard/project-card.types";
+import { IProjectApiData } from "./ProjectCard/project-card.types";
 import { ITemplate } from "./TemplateCard/template-card.types";
 
 export enum ECabinetCardsTypes {
@@ -9,6 +9,6 @@ export enum ECabinetCardsTypes {
 export type ICardList =
   | {
       type: ECabinetCardsTypes.PROJECT;
-      items: IProject[];
+      items: IProjectApiData[];
     }
   | { type: ECabinetCardsTypes.TEMPLATE; items: ITemplate[] };
